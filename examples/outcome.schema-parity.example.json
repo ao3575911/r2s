@@ -1,0 +1,12 @@
+{
+  "card_id": "r2s-schema-parity-ci",
+  "result": "ship",
+  "recorded_at": "2026-09-20T14:47:07Z",
+  "time_to_green_hours": 0.25,
+  "second_consumer": true,
+  "earn_hypothesis_held": true,
+  "commit_sha": "f5e9621f19e8f59f97823f2261071aaac30804b3",
+  "merge_commit_sha": "f5e9621f19e8f59f97823f2261071aaac30804b3",
+  "pr": 14,
+  "notes": "Schema parity CI shipped via PR #14. scripts/check_schema_parity.py + pytest workflow gate before tests. Local diverge probe exited 1 as expected; clean tree OK."
+}

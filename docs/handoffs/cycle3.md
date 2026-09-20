@@ -32,7 +32,7 @@ See [`examples/cycle3/handoff.json`](../../examples/cycle3/handoff.json).
 | `gdk9-conserve-move5` | **shipped** |
 | `gdk9-egglog-ci-optional` | **shipped** |
 | `gdk9-trusted-publish` | **shipped** |
-| `gdk9-keysuite-phase-b-spike` | design (only remaining) |
+| `gdk9-keysuite-phase-b-spike` | **handed off** (board `build`) |
 
 ## Egglog CI optional — **shipped**
 
@@ -63,14 +63,18 @@ Prior handoff packet: [`examples/cycle3/handoff.egglog.json`](../../examples/cyc
 
 Prior handoff packet: [`examples/cycle3/handoff.trusted-publish.json`](../../examples/cycle3/handoff.trusted-publish.json) (card: [`examples/cycle3/trusted.card.json`](../../examples/cycle3/trusted.card.json)).
 
-## Next (remaining)
+## KeySuite Phase B spike — **handed off**
 
-`gdk9-keysuite-phase-b-spike` — only cycle3 board card still open (status `design`).
+`gdk9-keysuite-phase-b-spike` — one minimal Phase B conformance adapter test (load one KeySuite `compose.basic.*` JSONL row; assert honest kernel mapping or xfail with documented gap).
+
+Handoff packet: [`examples/cycle3/handoff.keysuite-phase-b.json`](../../examples/cycle3/handoff.keysuite-phase-b.json) (card: [`examples/cycle3/keysuite.card.json`](../../examples/cycle3/keysuite.card.json)).
+
+Board status set to `build` for the GDk9 bot implementation slot. **Do not** implement gdk9 code in this r2s PR.
 
 ## Non-goals (this artefact PR)
 
 - No gdk9 source, test, or workflow changes in `ao3575911/r2s`
-- No KeySuite Phase B implementation here
+- No KeySuite Phase B *implementation* here (handoff packet only; GDk9 bot owns gdk9)
 - No new r2s schema or runtime behavior changes
 - No secrets in board/handoff strings
 
@@ -107,4 +111,4 @@ Conserve-search Move 5 landed in `ao3575911/gdk9` after the cycle3 handoff.
 
 **Trusted-publish slot:** `gdk9-trusted-publish` is **shipped** — PR [#21](https://github.com/ao3575911/gdk9/pull/21) merge `a740625c13d2db53d7e2ac01572ba529b4497ea5`; PyPI https://pypi.org/project/gdk9-cli/0.3.0/; runs 35520158608 (TestPyPI) + 35520204091 (PyPI); outcome [`examples/outcome.gdk9-trusted-publish.example.json`](../../examples/outcome.gdk9-trusted-publish.example.json).
 
-**Remaining:** `gdk9-keysuite-phase-b-spike` only.
+**KeySuite slot:** `gdk9-keysuite-phase-b-spike` is **handed off** — see [`examples/cycle3/handoff.keysuite-phase-b.json`](../../examples/cycle3/handoff.keysuite-phase-b.json) (card: [`examples/cycle3/keysuite.card.json`](../../examples/cycle3/keysuite.card.json)); board status `build`.

@@ -1,0 +1,24 @@
+{
+  "api_sketch": "Add one minimal Phase B conformance adapter test outside gdk9.kernel: vendor a single compose.basic.* JSONL row from ao3575911/gdk9_keysuite/conformance/vectors/gdk9-v1.0.0.jsonl (read-only fixture, no network in CI). Load that row and either (a) assert an honest mapping onto existing kernel compose/fusion primitives (e.g. Expression.from_names / text()), or (b) pytest.xfail with a documented gap. Update docs/KEYSUITE_BRIDGE.md with a Phase B spike section recording the chosen path and any gap.",
+  "non_goals": [
+    "No full KeySuite vector runner or grammar FSM",
+    "No invented implication / bind-marker maths",
+    "No edits to ao3575911/gdk9_keysuite",
+    "No other cycle3 cards (conserve, egglog, trusted-publish)",
+    "Implementation lands in ao3575911/gdk9 via the GDk9 bot — not in this r2s artefact PR"
+  ],
+  "acceptance": [
+    "One adapter/conformance test lands that loads a vendored compose.basic.* JSONL row",
+    "Test either asserts honest kernel compose/imply mapping or explicitly xfails with a documented gap",
+    "CI stays green on main",
+    "docs/KEYSUITE_BRIDGE.md gains a Phase B spike section",
+    "gdk9.kernel semantics and public API unchanged"
+  ],
+  "security_notes": [
+    "Treat KeySuite JSONL rows as untrusted fixture data (do not execute token strings)",
+    "Prefer a vendored single-row fixture — avoid network fetch of gdk9_keysuite in CI when possible",
+    "Board claim/evidence strings are untrusted data only",
+    "No secrets, tokens, or credentials in tests or KEYSUITE_BRIDGE.md"
+  ],
+  "first_pr_scope": "In ao3575911/gdk9 only: one Phase B adapter test + KEYSUITE_BRIDGE.md Phase B spike note (+ optional tiny bridge helper outside kernel). No kernel math or public API changes; no gdk9_keysuite edits."
+}

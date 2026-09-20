@@ -25,11 +25,24 @@ See [`examples/cycle3/handoff.json`](../../examples/cycle3/handoff.json).
 
 **Implementation owner:** GDk9 bot (id `1398231`) / repo `ao3575911/gdk9` — **do not** implement gdk9 code in this r2s PR.
 
-## Next (active build slot 2) — **handed off**
+## Egglog CI optional — **shipped**
 
-`gdk9-egglog-ci-optional` — CI/tox/pytest marker so egglog bridge tests run when `.[egglog]` is installed and skip cleanly otherwise.
+`gdk9-egglog-ci-optional` landed in `ao3575911/gdk9`.
 
-Handoff packet: [`examples/cycle3/handoff.egglog.json`](../../examples/cycle3/handoff.egglog.json) (card: [`examples/cycle3/next.card.json`](../../examples/cycle3/next.card.json)).
+| | |
+|-|-|
+| PR | [#20](https://github.com/ao3575911/gdk9/pull/20) |
+| Merge commit | `b27cfc6d7ceaf68dbbf0b2f01076fd192396406f` |
+| Outcome | [`examples/outcome.gdk9-egglog-ci-optional.example.json`](../../examples/outcome.gdk9-egglog-ci-optional.example.json) |
+| Result | **ship** (optional egglog pytest marker + CI job; default CI green without extra) |
+
+Prior handoff packet: [`examples/cycle3/handoff.egglog.json`](../../examples/cycle3/handoff.egglog.json) (card: [`examples/cycle3/next.card.json`](../../examples/cycle3/next.card.json)).
+
+## Next (active build slot) — **handed off**
+
+`gdk9-trusted-publish` — GitHub Actions Trusted Publishing for `gdk9-cli` to TestPyPI/PyPI, mirroring r2s `publish.yml`.
+
+Handoff packet: [`examples/cycle3/handoff.trusted-publish.json`](../../examples/cycle3/handoff.trusted-publish.json) (card: [`examples/cycle3/trusted.card.json`](../../examples/cycle3/trusted.card.json)).
 
 ## Non-goals (this artefact PR)
 
@@ -67,4 +80,6 @@ Conserve-search Move 5 landed in `ao3575911/gdk9` after the cycle3 handoff.
 | Outcome | [`examples/outcome.gdk9-conserve-move5.example.json`](../../examples/outcome.gdk9-conserve-move5.example.json) |
 | Result | **ship** (GDk9 bot implementation; fuse→split→fuse + same-names mismatch; Moves 1–4 green) |
 
-**Next slot:** `gdk9-egglog-ci-optional` is **handed off** — see [`examples/cycle3/handoff.egglog.json`](../../examples/cycle3/handoff.egglog.json).
+**Egglog slot:** `gdk9-egglog-ci-optional` is **shipped** — PR [#20](https://github.com/ao3575911/gdk9/pull/20) merge `b27cfc6d7ceaf68dbbf0b2f01076fd192396406f`; outcome [`examples/outcome.gdk9-egglog-ci-optional.example.json`](../../examples/outcome.gdk9-egglog-ci-optional.example.json).
+
+**Next slot:** `gdk9-trusted-publish` is **handed off** — see [`examples/cycle3/handoff.trusted-publish.json`](../../examples/cycle3/handoff.trusted-publish.json).

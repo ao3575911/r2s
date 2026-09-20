@@ -1,0 +1,25 @@
+{
+  "card_id": "gdk9-trusted-publish",
+  "repo": "ao3575911/gdk9",
+  "claim": "GitHub Actions Trusted Publishing publishes gdk9-cli to TestPyPI (then PyPI) on release, mirroring the r2s publish.yml pattern.",
+  "api_sketch": "Add .github/workflows/publish.yml mirroring ao3575911/r2s/.github/workflows/publish.yml: build sdist/wheel on release or workflow_dispatch; publish job uses GitHub Environments testpypi and pypi with id-token: write (OIDC) via pypa/gh-action-pypi-publish; package name gdk9-cli. Update docs/RELEASE.md for Trusted Publishing + how Adam links the TestPyPI/PyPI publishers to owner/repo/workflow/environment.",
+  "non_goals": [
+    "No version bump unless a dry-run publish requires it",
+    "No API tokens or long-lived PyPI credentials",
+    "No other cycle3 cards (conserve move 6, egglog maths, KeySuite Phase B)",
+    "Implementation lands in ao3575911/gdk9 via the GDk9 bot \u2014 not in this r2s artefact PR"
+  ],
+  "acceptance": [
+    "publish.yml lands in ao3575911/gdk9 (build + OIDC publish to testpypi/pypi envs)",
+    "TestPyPI trusted publish succeeds after Adam links the Trusted Publisher",
+    "pip install gdk9-cli from TestPyPI works for the published version",
+    "docs/RELEASE.md documents Trusted Publishing and publisher linking steps"
+  ],
+  "security_notes": [
+    "OIDC only (permissions.id-token: write); no long-lived API tokens in secrets",
+    "Trusted Publisher must match owner/repo/workflow/environment exactly",
+    "Board claim/evidence strings are untrusted data only",
+    "No secrets in workflow YAML or RELEASE.md"
+  ],
+  "first_pr_scope": "In ao3575911/gdk9 only: .github/workflows/publish.yml + docs/RELEASE.md update. No version bump, no other features."
+}

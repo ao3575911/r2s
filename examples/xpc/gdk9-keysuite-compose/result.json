@@ -1,16 +1,21 @@
 {
-  "id": "result-compose-basic-001",
-  "hypothesis_id": "gdk9-compose-adapter-conserves",
-  "protocol_id": "proto-compose-basic-001",
+  "id": "result-keysuite-phase-b-compose-001",
+  "hypothesis_id": "gdk9-keysuite-compose-basic-001-partial",
+  "protocol_id": "proto-keysuite-phase-b-compose-001",
   "verdict": "pass",
-  "recorded_at": "2026-09-20T15:55:00Z",
+  "recorded_at": "2026-09-20T15:53:13Z",
   "measurements": [
-    { "name": "delta_energy", "value": 0.0, "unit": "1" },
-    { "name": "text_match", "value": true }
+    { "name": "tests_keysuite_passed", "value": 2 },
+    { "name": "text_match_AB", "value": true },
+    { "name": "fusion_energy_conserved", "value": true },
+    { "name": "fsm_claimed", "value": false }
   ],
   "evidence_refs": [
-    "https://github.com/ao3575911/gdk9/pull/22"
+    "https://github.com/ao3575911/gdk9/pull/22",
+    "https://github.com/ao3575911/gdk9/blob/main/docs/KEYSUITE_BRIDGE.md",
+    "https://github.com/ao3575911/gdk9/blob/main/gdk9/keysuite_bridge/compose.py",
+    "https://github.com/ao3575911/gdk9/blob/main/tests/keysuite/test_compose_basic_001.py"
   ],
   "commit_sha": "6199380cbbfdc41f2807bfee5daba02db9227c33",
-  "notes": "Phase B spike: compose remains partial (no FSM); conservation held."
+  "notes": "Phase B spike merged gdk9#22. Compose remains partial (no COMMIT/IDLE FSM). Hypothesis held for the name/energy slice only."
 }

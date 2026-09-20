@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.1.2] — 2026-09-21
+
+### Added
+- Live run log: `examples/gdk9-keysuite-compose/` from GDk9 KeySuite Phase B spike (gdk9#22 @ 6199380c…)
+
 ## [0.1.1] — 2026-09-21
 
 ### Added

@@ -1,15 +1,17 @@
 {
-  "id": "gdk9-compose-adapter-conserves",
-  "claim": "A KeySuite compose.basic adapter maps name concatenation without violating kernel fusion conservation.",
-  "falsifier": "Adapter output energy differs from fusion_rule energy by more than 1e-9 on the vendored vector.",
-  "success_metric": "pytest: name text match AND |ΔE| ≤ 1e-9",
+  "id": "gdk9-keysuite-compose-basic-001-partial",
+  "claim": "An outside-kernel KeySuite compose.basic.001 adapter can map tokens A B SPACE → text AB and conserved fusion energy without changing kernel semantics or inventing FSM maths.",
+  "falsifier": "Adapter text ≠ AB, or |ΔE| vs fusion_rule > 1e-9, or tests require pytest.xfail for the name/energy slice that Phase A marked partial-fit.",
+  "success_metric": "pytest -q tests/keysuite/ : text()==\"AB\" AND fusion energy conserved on vendored compose.basic.001.",
   "assumptions": [
-    "Kernel fusion_rule semantics unchanged",
-    "Vector compose.basic.001 is authoritative"
+    "Phase A matrix: compose is partial (no token stream / COMMIT / IDLE FSM in kernel)",
+    "KeySuite sibling repo stays read-only; one vector vendored",
+    "Approach A chosen over full xfail or mini-FSM"
   ],
   "status": "supported",
   "links": {
     "r2s_card_id": "gdk9-keysuite-phase-b-spike",
     "repo": "ao3575911/gdk9"
-  }
+  },
+  "notes": "Source: docs/KEYSUITE_BRIDGE.md Phase B spike; r2s cycle3 card gdk9-keysuite-phase-b-spike."
 }

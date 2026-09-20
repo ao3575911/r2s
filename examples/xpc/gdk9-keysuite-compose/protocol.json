@@ -1,12 +1,47 @@
 {
-  "id": "proto-compose-basic-001",
-  "hypothesis_id": "gdk9-compose-adapter-conserves",
+  "id": "proto-keysuite-phase-b-compose-001",
+  "hypothesis_id": "gdk9-keysuite-compose-basic-001-partial",
   "steps": [
-    { "n": 1, "action": "Load vendored compose.basic.001 JSONL row", "expect": "tokens A,B,SPACE → AB" },
-    { "n": 2, "action": "Run adapter name mapping", "expect": "text == AB" },
-    { "n": 3, "action": "Compare fusion energy to adapter energy", "expect": "|ΔE| ≤ 1e-9" }
+    {
+      "n": 1,
+      "action": "Vendor compose.basic.001 (A B SPACE → AB) into tests/keysuite/fixtures/; KeySuite upstream untouched",
+      "expect": "Fixture id=compose.basic.001 present"
+    },
+    {
+      "n": 2,
+      "action": "Implement gdk9/keysuite_bridge/compose.py: strip COMMIT-like tokens → Expression.from_names",
+      "expect": "Outside kernel boundary; no kernel maths changes"
+    },
+    {
+      "n": 3,
+      "action": "Assert Expression.text() == \"AB\" for content names (A,B)",
+      "expect": "pass (honest partial-fit)"
+    },
+    {
+      "n": 4,
+      "action": "Assert fusion_rule on those names conserves energy (|ΔE|≤1e-9)",
+      "expect": "pass"
+    },
+    {
+      "n": 5,
+      "action": "Document Phase B in docs/KEYSUITE_BRIDGE.md: pass rows + explicit FSM gap (compose stays partial)",
+      "expect": "No silent overclaim of full KeySuite runner"
+    }
   ],
-  "controls": ["Do not edit gdk9.kernel semantics"],
-  "environment": { "kind": "ci", "detail": "pytest on GitHub Actions" },
-  "inputs": ["conformance/vectors/compose.basic.001"]
+  "controls": [
+    "No full JSONL runner / Redis / WS",
+    "No KeySuite repo edits",
+    "No new implication semantics"
+  ],
+  "environment": {
+    "kind": "ci",
+    "detail": "GitHub Actions; local: pytest -q tests/keysuite/"
+  },
+  "inputs": [
+    "docs/KEYSUITE_BRIDGE.md",
+    "tests/keysuite/fixtures/compose.basic.001.json",
+    "gdk9/keysuite_bridge/compose.py",
+    "tests/keysuite/test_compose_basic_001.py"
+  ],
+  "notes": "Competing approaches: A=name/fusion slice (chosen); B=blanket xfail; C=mini-FSM (deferred)."
 }

@@ -1,0 +1,9 @@
+{
+  "card_id": "r2s-runtime-v0",
+  "result": "ship",
+  "recorded_at": "2026-09-20T13:01:11Z",
+  "time_to_green_hours": 0.5,
+  "second_consumer": false,
+  "earn_hypothesis_held": true,
+  "notes": "Merged PR #1 (feat/runtime-v0) \u2014 Python r2s package with score/should_kill/rank/handoff/load_*, CLI, pytest+Actions. CI green. Spec remains normative; runtime is first in-repo consumer of the schemas."
+}

@@ -49,3 +49,7 @@ Optional CLI: `r2s rank board.json`, `r2s handoff card.json`.
 
 ## Prior outcome (cycle 0)
 See [`examples/outcome.example.json`](../../examples/outcome.example.json) — `r2s-spec-v0` → **ship**.
+
+## Cycle 1 outcome
+
+**ship** — merged https://github.com/ao3575911/r2s/pull/1 at 2026-09-20T13:01:11Z. See [`examples/outcome.runtime.example.json`](../../examples/outcome.runtime.example.json).

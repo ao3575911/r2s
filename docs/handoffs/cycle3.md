@@ -25,6 +25,15 @@ See [`examples/cycle3/handoff.json`](../../examples/cycle3/handoff.json).
 
 **Implementation owner:** GDk9 bot (id `1398231`) / repo `ao3575911/gdk9` — **do not** implement gdk9 code in this r2s PR.
 
+## Board status (cycle3)
+
+| Card | Status |
+|------|--------|
+| `gdk9-conserve-move5` | **shipped** |
+| `gdk9-egglog-ci-optional` | **shipped** |
+| `gdk9-trusted-publish` | **shipped** |
+| `gdk9-keysuite-phase-b-spike` | design (only remaining) |
+
 ## Egglog CI optional — **shipped**
 
 `gdk9-egglog-ci-optional` landed in `ao3575911/gdk9`.
@@ -38,27 +47,41 @@ See [`examples/cycle3/handoff.json`](../../examples/cycle3/handoff.json).
 
 Prior handoff packet: [`examples/cycle3/handoff.egglog.json`](../../examples/cycle3/handoff.egglog.json) (card: [`examples/cycle3/next.card.json`](../../examples/cycle3/next.card.json)).
 
-## Next (active build slot) — **handed off**
+## Trusted Publishing — **shipped**
 
-`gdk9-trusted-publish` — GitHub Actions Trusted Publishing for `gdk9-cli` to TestPyPI/PyPI, mirroring r2s `publish.yml`.
+`gdk9-trusted-publish` is **fully live** for `gdk9-cli` (OIDC Trusted Publishing to TestPyPI and PyPI).
 
-Handoff packet: [`examples/cycle3/handoff.trusted-publish.json`](../../examples/cycle3/handoff.trusted-publish.json) (card: [`examples/cycle3/trusted.card.json`](../../examples/cycle3/trusted.card.json)).
+| | |
+|-|-|
+| PR | [#21](https://github.com/ao3575911/gdk9/pull/21) |
+| Merge commit | `a740625c13d2db53d7e2ac01572ba529b4497ea5` |
+| PyPI | https://pypi.org/project/gdk9-cli/0.3.0/ (`pip install gdk9-cli==0.3.0` verified) |
+| TestPyPI run | https://github.com/ao3575911/gdk9/actions/runs/35520158608 (success) |
+| Prod PyPI run | https://github.com/ao3575911/gdk9/actions/runs/35520204091 (success) |
+| Outcome | [`examples/outcome.gdk9-trusted-publish.example.json`](../../examples/outcome.gdk9-trusted-publish.example.json) |
+| Result | **ship** (OIDC `id-token: write`; TestPyPI + PyPI both published 0.3.0) |
+
+Prior handoff packet: [`examples/cycle3/handoff.trusted-publish.json`](../../examples/cycle3/handoff.trusted-publish.json) (card: [`examples/cycle3/trusted.card.json`](../../examples/cycle3/trusted.card.json)).
+
+## Next (remaining)
+
+`gdk9-keysuite-phase-b-spike` — only cycle3 board card still open (status `design`).
 
 ## Non-goals (this artefact PR)
 
 - No gdk9 source, test, or workflow changes in `ao3575911/r2s`
-- No Trusted Publishing / KeySuite Phase B / egglog CI implementation here
+- No KeySuite Phase B implementation here
 - No new r2s schema or runtime behavior changes
 - No secrets in board/handoff strings
 
 ## Evidence snapshot (live GDk9)
 
-- Recent merges: PR#18 handbook kernel CLI doctest gate; PR#17 conserve move 4; PR#16 move 3; AGPL license
-- `docs/EXPERIMENT_CONSERVE_SEARCH.md` — move 4 done; next beat not coded
-- `docs/SPIKE-egglog.md` + `gdk9/egglog_bridge/` — optional egglog spike
-- `docs/KEYSUITE_BRIDGE.md` — Phase A docs-only
-- `docs/RELEASE.md` — local/TestPyPI path; no Trusted Publishing workflow yet
-- No open issues on gdk9 at board time
+- Recent merges: PR#21 Trusted Publishing; PR#20 egglog CI optional; PR#19 conserve move 5; PR#18 handbook kernel CLI doctest gate
+- `gdk9-cli` 0.3.0 on PyPI + TestPyPI via OIDC Trusted Publishing
+- `docs/EXPERIMENT_CONSERVE_SEARCH.md` — moves 1–5 done
+- `docs/SPIKE-egglog.md` + optional egglog CI job
+- `docs/KEYSUITE_BRIDGE.md` — Phase A docs-only (Phase B spike remaining)
+- `docs/RELEASE.md` — Trusted Publishing documented
 
 ## Cycle 3 ship (verified)
 
@@ -82,4 +105,6 @@ Conserve-search Move 5 landed in `ao3575911/gdk9` after the cycle3 handoff.
 
 **Egglog slot:** `gdk9-egglog-ci-optional` is **shipped** — PR [#20](https://github.com/ao3575911/gdk9/pull/20) merge `b27cfc6d7ceaf68dbbf0b2f01076fd192396406f`; outcome [`examples/outcome.gdk9-egglog-ci-optional.example.json`](../../examples/outcome.gdk9-egglog-ci-optional.example.json).
 
-**Next slot:** `gdk9-trusted-publish` is **handed off** — see [`examples/cycle3/handoff.trusted-publish.json`](../../examples/cycle3/handoff.trusted-publish.json).
+**Trusted-publish slot:** `gdk9-trusted-publish` is **shipped** — PR [#21](https://github.com/ao3575911/gdk9/pull/21) merge `a740625c13d2db53d7e2ac01572ba529b4497ea5`; PyPI https://pypi.org/project/gdk9-cli/0.3.0/; runs 35520158608 (TestPyPI) + 35520204091 (PyPI); outcome [`examples/outcome.gdk9-trusted-publish.example.json`](../../examples/outcome.gdk9-trusted-publish.example.json).
+
+**Remaining:** `gdk9-keysuite-phase-b-spike` only.

@@ -14,7 +14,7 @@
         {
           "kind": "repo",
           "ref": "https://github.com/ao3575911/gdk9/blob/main/tests/experiment/test_conserve_vs_naive.py",
-          "note": "Moves 1–4 covered as executable experiment"
+          "note": "Moves 1\u20134 covered as executable experiment"
         },
         {
           "kind": "other",
@@ -35,8 +35,8 @@
       "hours": 2.5,
       "compute_cost": 0,
       "blast_radius": 1,
-      "status": "design",
-      "notes": "Cycle 3 second-consumer card — implementation belongs to GDk9 bot, not this r2s PR."
+      "status": "ship",
+      "notes": "Shipped in ao3575911/gdk9 PR #19 (merge bc58029380db04fe76a7c2cce7819734331a3fbe). Outcome: examples/outcome.gdk9-conserve-move5.example.json."
     },
     {
       "id": "gdk9-trusted-publish",
@@ -71,12 +71,12 @@
       "hours": 2,
       "compute_cost": 0,
       "blast_radius": 2,
-      "status": "design",
-      "notes": "Lower novelty, higher blast (release surface); needs publisher setup outside code."
+      "status": "ship",
+      "notes": "Shipped in ao3575911/gdk9 PR #21 (merge a740625c13d2db53d7e2ac01572ba529b4497ea5). PyPI https://pypi.org/project/gdk9-cli/0.3.0/; TestPyPI+PyPI OIDC runs green. Outcome: examples/outcome.gdk9-trusted-publish.example.json."
     },
     {
       "id": "gdk9-egglog-ci-optional",
-      "claim": "CI job (or tox/pytest marker) runs egglog bridge tests when the egglog extra is installed, and skips cleanly without it — no false red on main.",
+      "claim": "CI job (or tox/pytest marker) runs egglog bridge tests when the egglog extra is installed, and skips cleanly without it \u2014 no false red on main.",
       "evidence": [
         {
           "kind": "spike",
@@ -102,8 +102,8 @@
       "hours": 1.75,
       "compute_cost": 0,
       "blast_radius": 1,
-      "status": "design",
-      "notes": "Good second active-build slot — small CI hygiene after conserve move 5."
+      "status": "ship",
+      "notes": "Shipped in ao3575911/gdk9 PR #20 (merge b27cfc6d7ceaf68dbbf0b2f01076fd192396406f). Outcome: examples/outcome.gdk9-egglog-ci-optional.example.json."
     },
     {
       "id": "gdk9-keysuite-phase-b-spike",
@@ -122,7 +122,7 @@
       ],
       "earn_path": {
         "who_pays": "Conformance bridge research",
-        "wedge": "Tiny adapter or honest xfail — no invented maths",
+        "wedge": "Tiny adapter or honest xfail \u2014 no invented maths",
         "cheapest_test": "Load one JSONL row; assert or xfail with gap note in KEYSUITE_BRIDGE.md"
       },
       "target_repo": "ao3575911/gdk9",
@@ -134,7 +134,7 @@
       "compute_cost": 0,
       "blast_radius": 2.5,
       "status": "design",
-      "notes": "Higher novelty, weaker evidence; keep scope to one vector — do not invent implication semantics."
+      "notes": "Higher novelty, weaker evidence; keep scope to one vector \u2014 do not invent implication semantics."
     }
   ]
 }

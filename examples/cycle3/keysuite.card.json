@@ -1,0 +1,31 @@
+{
+  "id": "gdk9-keysuite-phase-b-spike",
+  "claim": "One minimal Phase B conformance adapter test that loads a KeySuite vector JSONL row and asserts kernel compose/imply behavior OR explicitly xfails with a documented gap.",
+  "evidence": [
+    {
+      "kind": "doc",
+      "ref": "https://github.com/ao3575911/gdk9/blob/main/docs/KEYSUITE_BRIDGE.md",
+      "note": "Phase A docs-only inventory; no adapter code yet"
+    },
+    {
+      "kind": "other",
+      "ref": "https://github.com/ao3575911/gdk9/pull/10",
+      "note": "Spec 7 KeySuite conformance inventory PR"
+    }
+  ],
+  "earn_path": {
+    "who_pays": "Conformance bridge research",
+    "wedge": "Tiny adapter or honest xfail — no invented maths",
+    "cheapest_test": "Load one JSONL row; assert or xfail with gap note in KEYSUITE_BRIDGE.md"
+  },
+  "target_repo": "ao3575911/gdk9",
+  "novelty": 0.7,
+  "evidence_strength": 0.45,
+  "usability": 0.6,
+  "dependency_fit": 0.7,
+  "hours": 4,
+  "compute_cost": 0,
+  "blast_radius": 2.5,
+  "status": "build",
+  "notes": "Handed off — see examples/cycle3/handoff.keysuite-phase-b.json. Higher novelty, weaker evidence; keep scope to one vector — do not invent implication semantics."
+}

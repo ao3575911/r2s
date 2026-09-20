@@ -1,0 +1,12 @@
+{
+  "card_id": "gdk9-trusted-publish",
+  "result": "ship",
+  "recorded_at": "2026-09-20T15:40:00Z",
+  "time_to_green_hours": 0.2,
+  "second_consumer": true,
+  "earn_hypothesis_held": true,
+  "commit_sha": "a740625c13d2db53d7e2ac01572ba529b4497ea5",
+  "merge_commit_sha": "a740625c13d2db53d7e2ac01572ba529b4497ea5",
+  "pr": 21,
+  "notes": "GDk9 bot shipped Trusted Publishing for gdk9-cli via OIDC (id-token: write; no API tokens). Landed in ao3575911/gdk9 via PR #21 merge a740625c13d2db53d7e2ac01572ba529b4497ea5. TestPyPI run https://github.com/ao3575911/gdk9/actions/runs/35520158608 success; PyPI run https://github.com/ao3575911/gdk9/actions/runs/35520204091 success. Live: https://pypi.org/project/gdk9-cli/0.3.0/ (pip install gdk9-cli==0.3.0 verified); TestPyPI also has 0.3.0. Cycle3 board: conserve-move5, egglog-ci-optional, trusted-publish all shipped; remaining: gdk9-keysuite-phase-b-spike."
+}

@@ -31,6 +31,6 @@
   "hours": 2,
   "compute_cost": 0,
   "blast_radius": 2,
-  "status": "design",
-  "notes": "Lower novelty, higher blast (release surface); needs publisher setup outside code."
+  "status": "ship",
+  "notes": "Shipped \u2014 see examples/outcome.gdk9-trusted-publish.example.json"
 }

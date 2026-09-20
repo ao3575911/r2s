@@ -1,2 +1,0 @@
-[console_scripts]
-r2s = r2s.cli:main

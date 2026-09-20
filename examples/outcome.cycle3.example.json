@@ -1,0 +1,12 @@
+{
+  "card_id": "gdk9-conserve-move5",
+  "result": "ship",
+  "recorded_at": "2026-09-20T15:14:30Z",
+  "time_to_green_hours": 0.1,
+  "second_consumer": true,
+  "earn_hypothesis_held": true,
+  "commit_sha": "bde60953bce7a3314feec61591aa1b73b5c55145",
+  "merge_commit_sha": "bde60953bce7a3314feec61591aa1b73b5c55145",
+  "pr": 15,
+  "notes": "Cycle 3 dogfood: r2s CLI ranked four ao3575911/gdk9 cards; winner gdk9-conserve-move5 artefact shipped via PR #15. GDk9 is the external second_consumer of r2s schemas/CLI. Implementation of conserve move 5 belongs to GDk9 bot (id 1398231) — not this r2s PR. Next active slot: gdk9-egglog-ci-optional."
+}

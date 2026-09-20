@@ -44,3 +44,12 @@ See [`examples/cycle3/handoff.json`](../../examples/cycle3/handoff.json).
 - `docs/KEYSUITE_BRIDGE.md` — Phase A docs-only
 - `docs/RELEASE.md` — local/TestPyPI path; no Trusted Publishing workflow yet
 - No open issues on gdk9 at board time
+
+## Cycle 3 ship (verified)
+
+| | |
+|-|-|
+| PR | [#15](https://github.com/ao3575911/r2s/pull/15) |
+| Merge commit | `bde60953bce7a3314feec61591aa1b73b5c55145` |
+| Outcome | [`examples/outcome.cycle3.example.json`](../../examples/outcome.cycle3.example.json) |
+| Result | **ship** (artefact only; GDk9 implementation deferred to bot 1398231) |

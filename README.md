@@ -1,85 +1,51 @@
 <p align="center">
-  <img src="docs/brand/icon.png" alt="r2s" width="96" height="96" />
+  <img src="docs/brand/icon.png" width="88" alt="r2s" />
 </p>
 
 <h1 align="center">r2s</h1>
 
+<p align="center"><b>research → rank → ship</b></p>
+
 <p align="center">
-  <strong>↻ research → rank → ship</strong><br />
-  JSON Schema contract for turning research signals into repo and library work.
+  Schema + CLI that turns research into ranked cards, handoffs, and ship outcomes.
 </p>
 
 <p align="center">
-  <img src="docs/brand/loop.gif" alt="sense → rank → handoff → ship" width="640" />
+  <img src="docs/brand/loop.gif" width="640" alt="Sense → Rank → Handoff → Ship" />
 </p>
 
 <p align="center">
-  <a href="docs/SPEC.md"><img src="https://img.shields.io/badge/spec-v0.1.0-5eead4?style=flat-square" alt="spec v0.1.0" /></a>
+  <a href="https://pypi.org/project/r2s/"><img src="https://img.shields.io/pypi/v/r2s?style=flat-square&color=5eead4" alt="PyPI" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-0f1115?style=flat-square" alt="MIT" /></a>
-  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/changelog-SHA%20verified-5eead4?style=flat-square" alt="changelog" /></a>
-  <img src="https://img.shields.io/badge/runtime-Python%203.11%2B-8b949e?style=flat-square" alt="Python runtime" />
+  <img src="https://img.shields.io/badge/python-3.11%2B-8b949e?style=flat-square" alt="Python" />
 </p>
 
----
+## Install
 
-## What this is
-
-**r2s** is a small, versioned contract — not an agent and not a framework.
-
-You normalize research into **cards**, **rank** them with an explicit score, emit a fixed **handoff** for whoever builds, then record an **outcome** so the next cycle is smarter.
-
-**v0.1.0** is the schema contract; **v0.2.0** adds a thin Python reference runtime. Both obey `docs/SPEC.md`. Public history with full commit SHAs: [`CHANGELOG.md`](CHANGELOG.md).
-
-## Quick start
-
-1. Read the normative rules: [`docs/SPEC.md`](docs/SPEC.md)
-2. Copy [`examples/board.example.json`](examples/board.example.json)
-3. Validate with any JSON Schema Draft 2020-12 validator against [`schemas/`](schemas/)
+```bash
+pip install r2s
+r2s --help
+```
 
 ## Loop
 
-| Stage | Artifact | Role |
-|-------|----------|------|
-| Sense | `card` | Normalize a research signal |
-| Rank | `board` + scoring rules | Order work; kill weak cards |
-| Handoff | `handoff` | 7-part ship packet for implementers |
-| Ship / learn | `outcome` | Close the loop |
-
-**Score**
+| | Artifact | Job |
+|-|----------|-----|
+| Sense | `card` | Normalize a signal |
+| Rank | `board` | Score & kill weak work |
+| Handoff | `handoff` | Fixed packet for builders |
+| Ship | `outcome` | Did the earn hypothesis hold? |
 
 ```text
-S = (novelty × evidence_strength × usability × dependency_fit)
-  / (hours + compute_cost + blast_radius)
+S = (novelty × evidence × usability × fit) / (hours + compute + blast)
 ```
 
-Kill when usability or dependency fit ≈ 0, or `target_repo` is missing at design+.
+## Docs
 
-## Layout
-
-```text
-schemas/          card · board · handoff · outcome · scoring
-docs/SPEC.md      normative rules
-docs/brand/       icon · social · README loop GIF
-examples/         worked board + handoff (this repo as the sample)
-```
-
-## Brand
-
-| | |
-|-|-|
-| Mark | stacked cards → chevron (cyan on charcoal) |
-| Emoji | ↻ |
-| Accent | `#5eead4` on `#0f1115` |
-
-## Security
-
-Card fields are **untrusted data**. Validators must not execute claim or evidence strings. This repo holds no credentials and no network clients.
-
-## Changelog & identity
-
-Ship history is **SHA-verified** in [`CHANGELOG.md`](CHANGELOG.md). Security posture: [`SECURITY.md`](SECURITY.md).
-
-Current `main` tip at publish of this note is recorded in the changelog Unreleased/latest section after each merge.
+- Spec → [`docs/SPEC.md`](docs/SPEC.md)
+- Schemas → [`schemas/`](schemas/)
+- Examples → [`examples/`](examples/)
+- Changelog → [`CHANGELOG.md`](CHANGELOG.md)
 
 ## License
 

@@ -1,11 +1,9 @@
-# Brand assets
+# Brand
 
 | File | Use |
 |------|-----|
-| `icon.png` | App / repo mark (1:1) |
-| `icon-128.png` | Small mark |
-| `social.png` | Open Graph / social preview (16:9) |
-| `loop.gif` | README hero animation (sense → rank → handoff → ship) |
-| `frames/` | Source frames for the GIF |
+| `icon.png` / `icon-128.png` | README mark |
+| `social.png` | GitHub social preview (1280×640) |
+| `loop.gif` | README loop animation |
 
-Accent: `#5eead4` · Ground: `#0f1115` · Motto emoji: ↻
+Accent `#5eead4` on `#0f1115`. Emoji: ↻

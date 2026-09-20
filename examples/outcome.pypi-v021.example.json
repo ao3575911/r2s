@@ -1,0 +1,12 @@
+{
+  "card_id": "r2s-prod-pypi-v021",
+  "result": "ship",
+  "recorded_at": "2026-09-20T14:57:48Z",
+  "time_to_green_hours": 0.1,
+  "second_consumer": true,
+  "earn_hypothesis_held": true,
+  "commit_sha": "87de98c",
+  "merge_commit_sha": "87de98c",
+  "pr": 12,
+  "notes": "Prod PyPI r2s==0.2.1 published via Trusted Publisher (workflow_dispatch target=pypi). Run 35517936926 success. Issue #12 closed. pip install r2s==0.2.1 verified."
+}

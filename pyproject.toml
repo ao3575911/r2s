@@ -27,7 +27,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8,<9", "build>=1.2,<2", "twine>=5,<7"]
+dev = ["pytest>=8,<10", "build>=1.2,<2", "twine>=5,<7"]
 
 [project.urls]
 Homepage = "https://github.com/ao3575911/r2s"

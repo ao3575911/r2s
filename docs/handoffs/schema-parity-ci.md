@@ -20,3 +20,12 @@
 
 ## Security
 No network; local file compare only.
+
+## Ship outcome
+
+| | |
+|-|-|
+| PR | [#14](https://github.com/ao3575911/r2s/pull/14) |
+| Merge | `f5e9621f19e8f59f97823f2261071aaac30804b3` |
+| Result | **ship** |
+| Outcome | `examples/outcome.schema-parity.example.json` |

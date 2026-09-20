@@ -3,6 +3,8 @@
 ## [0.2.0] — 2026-09-21
 
 ### Added
+- Trusted Publishing workflow (`.github/workflows/publish.yml`) + `docs/PUBLISHING.md`
+- GitHub Environments `testpypi` / `pypi`
 - Thin CLI: `xpc validate` (auto-detect artifact kind)
 - Live run: `examples/gdk9-egglog-dr-bridge/` (SPIKE-egglog YES + gdk9#20)
 - Packaged schemas under `src/xpc/schemas/`

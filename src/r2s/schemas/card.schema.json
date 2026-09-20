@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ao3575911.github.io/r2s/schemas/card.schema.json",
+  "title": "R2S Card",
+  "description": "Normalized research signal for the research-to-ship loop.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "claim",
+    "evidence",
+    "novelty",
+    "evidence_strength",
+    "usability",
+    "dependency_fit",
+    "hours",
+    "compute_cost",
+    "blast_radius",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable card id (slug)."
+    },
+    "claim": {
+      "type": "string",
+      "minLength": 1,
+      "description": "One sentence the eventual code must make true."
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kind",
+          "ref"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "paper",
+              "repo",
+              "doc",
+              "spike",
+              "outcome",
+              "other"
+            ]
+          },
+          "ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "earn_path": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "who_pays": {
+          "type": "string"
+        },
+        "wedge": {
+          "type": "string"
+        },
+        "cheapest_test": {
+          "type": "string"
+        }
+      }
+    },
+    "target_repo": {
+      "type": "string",
+      "pattern": "^[^/\\s]+/[^/\\s]+$",
+      "description": "owner/name when status is design or later."
+    },
+    "novelty": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "evidence_strength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "usability": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "dependency_fit": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "hours": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "compute_cost": {
+      "type": "number",
+      "minimum": 0
+    },
+    "blast_radius": {
+      "type": "number",
+      "minimum": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "sense",
+        "design",
+        "build",
+        "ship",
+        "learn",
+        "killed"
+      ]
+    },
+    "kill_reason": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "design",
+              "build",
+              "ship"
+            ]
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "required": [
+          "target_repo"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "killed"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "required": [
+          "kill_reason"
+        ]
+      }
+    }
+  ]
+}

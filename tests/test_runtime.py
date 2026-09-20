@@ -141,3 +141,14 @@ def test_packaged_schemas_match_repo_root():
     assert pkg_files == repo_files
     for name in pkg_files:
         assert filecmp.cmp(pkg / name, repo / name, shallow=False)
+
+
+def test_schema_parity_script_exits_zero():
+    import subprocess
+    import sys
+    from pathlib import Path
+
+    script = Path(__file__).resolve().parents[1] / "scripts" / "check_schema_parity.py"
+    r = subprocess.run([sys.executable, str(script)], capture_output=True, text=True)
+    assert r.returncode == 0, r.stderr
+    assert "schema parity OK" in r.stdout

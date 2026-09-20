@@ -12,4 +12,6 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -e ".[dev]"
+      - name: Schema parity (root vs packaged)
+        run: python scripts/check_schema_parity.py
       - run: pytest -q

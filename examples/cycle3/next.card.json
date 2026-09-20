@@ -1,0 +1,31 @@
+{
+  "id": "gdk9-egglog-ci-optional",
+  "claim": "CI job (or tox/pytest marker) runs egglog bridge tests when the egglog extra is installed, and skips cleanly without it \u2014 no false red on main.",
+  "evidence": [
+    {
+      "kind": "spike",
+      "ref": "https://github.com/ao3575911/gdk9/blob/main/docs/SPIKE-egglog.md",
+      "note": "Spike verdict YES; egglog optional extra documented"
+    },
+    {
+      "kind": "repo",
+      "ref": "https://github.com/ao3575911/gdk9/tree/main/gdk9/egglog_bridge",
+      "note": "dr_egglog.py + fallback.py live in-tree"
+    }
+  ],
+  "earn_path": {
+    "who_pays": "CI green for default installs",
+    "wedge": "Optional-extra tests without poisoning main",
+    "cheapest_test": "pytest marker + CI matrix job with pip install '.[egglog]'; assert skip without extra"
+  },
+  "target_repo": "ao3575911/gdk9",
+  "novelty": 0.35,
+  "evidence_strength": 0.8,
+  "usability": 0.85,
+  "dependency_fit": 0.9,
+  "hours": 1.75,
+  "compute_cost": 0,
+  "blast_radius": 1,
+  "status": "design",
+  "notes": "Good second active-build slot \u2014 small CI hygiene after conserve move 5."
+}

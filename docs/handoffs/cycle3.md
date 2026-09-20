@@ -25,9 +25,11 @@ See [`examples/cycle3/handoff.json`](../../examples/cycle3/handoff.json).
 
 **Implementation owner:** GDk9 bot (id `1398231`) / repo `ao3575911/gdk9` — **do not** implement gdk9 code in this r2s PR.
 
-## Next (active build slot 2)
+## Next (active build slot 2) — **handed off**
 
 `gdk9-egglog-ci-optional` — CI/tox/pytest marker so egglog bridge tests run when `.[egglog]` is installed and skip cleanly otherwise.
+
+Handoff packet: [`examples/cycle3/handoff.egglog.json`](../../examples/cycle3/handoff.egglog.json) (card: [`examples/cycle3/next.card.json`](../../examples/cycle3/next.card.json)).
 
 ## Non-goals (this artefact PR)
 
@@ -53,3 +55,16 @@ See [`examples/cycle3/handoff.json`](../../examples/cycle3/handoff.json).
 | Merge commit | `bde60953bce7a3314feec61591aa1b73b5c55145` |
 | Outcome | [`examples/outcome.cycle3.example.json`](../../examples/outcome.cycle3.example.json) |
 | Result | **ship** (artefact only; GDk9 implementation deferred to bot 1398231) |
+
+## GDk9 implementation ship
+
+Conserve-search Move 5 landed in `ao3575911/gdk9` after the cycle3 handoff.
+
+| | |
+|-|-|
+| PR | [#19](https://github.com/ao3575911/gdk9/pull/19) |
+| Merge commit | `bc58029380db04fe76a7c2cce7819734331a3fbe` |
+| Outcome | [`examples/outcome.gdk9-conserve-move5.example.json`](../../examples/outcome.gdk9-conserve-move5.example.json) |
+| Result | **ship** (GDk9 bot implementation; fuse→split→fuse + same-names mismatch; Moves 1–4 green) |
+
+**Next slot:** `gdk9-egglog-ci-optional` is **handed off** — see [`examples/cycle3/handoff.egglog.json`](../../examples/cycle3/handoff.egglog.json).

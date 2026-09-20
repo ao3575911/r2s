@@ -1,0 +1,36 @@
+{
+  "id": "gdk9-trusted-publish",
+  "claim": "GitHub Actions Trusted Publishing publishes gdk9-cli to TestPyPI (then PyPI) on release, mirroring the r2s publish.yml pattern.",
+  "evidence": [
+    {
+      "kind": "doc",
+      "ref": "https://github.com/ao3575911/gdk9/blob/main/docs/RELEASE.md",
+      "note": "Local/TestPyPI twine path only; Trusted Publishing deferred"
+    },
+    {
+      "kind": "other",
+      "ref": "https://github.com/ao3575911/gdk9/releases/tag/v0.3.0",
+      "note": "gdk9-cli 0.3.0 on GitHub Releases; install via git tag today"
+    },
+    {
+      "kind": "repo",
+      "ref": "https://github.com/ao3575911/r2s/blob/main/.github/workflows/publish.yml",
+      "note": "r2s Trusted Publishing workflow as pattern (other repo)"
+    }
+  ],
+  "earn_path": {
+    "who_pays": "Public install surface for gdk9-cli",
+    "wedge": "pip install gdk9-cli from TestPyPI/PyPI on release",
+    "cheapest_test": "Add publish.yml + TestPyPI Trusted Publisher; cut a dry-run tag"
+  },
+  "target_repo": "ao3575911/gdk9",
+  "novelty": 0.2,
+  "evidence_strength": 0.75,
+  "usability": 0.95,
+  "dependency_fit": 0.8,
+  "hours": 2,
+  "compute_cost": 0,
+  "blast_radius": 2,
+  "status": "design",
+  "notes": "Lower novelty, higher blast (release surface); needs publisher setup outside code."
+}

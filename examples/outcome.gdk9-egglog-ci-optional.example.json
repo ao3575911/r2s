@@ -1,0 +1,12 @@
+{
+  "card_id": "gdk9-egglog-ci-optional",
+  "result": "ship",
+  "recorded_at": "2026-09-20T15:31:03Z",
+  "time_to_green_hours": 0.05,
+  "second_consumer": true,
+  "earn_hypothesis_held": true,
+  "commit_sha": "b27cfc6d7ceaf68dbbf0b2f01076fd192396406f",
+  "merge_commit_sha": "b27cfc6d7ceaf68dbbf0b2f01076fd192396406f",
+  "pr": 20,
+  "notes": "GDk9 bot shipped optional egglog pytest marker + CI job after r2s egglog handoff. Landed in ao3575911/gdk9 via PR #20 merge b27cfc6d7ceaf68dbbf0b2f01076fd192396406f. Default CI stays green without egglog; optional job runs with .[egglog]. Next board card: gdk9-trusted-publish."
+}

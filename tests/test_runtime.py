@@ -126,4 +126,18 @@ def _card(cid: str, s_factor: float, status: str) -> dict:
 def test_import_r2s():
     import r2s
 
-    assert r2s.__version__ == "0.1.0"
+    assert r2s.__version__ == "0.2.0"
+
+
+def test_packaged_schemas_match_repo_root():
+    import filecmp
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1]
+    pkg = root / "src" / "r2s" / "schemas"
+    repo = root / "schemas"
+    pkg_files = sorted(p.name for p in pkg.glob("*.schema.json"))
+    repo_files = sorted(p.name for p in repo.glob("*.schema.json"))
+    assert pkg_files == repo_files
+    for name in pkg_files:
+        assert filecmp.cmp(pkg / name, repo / name, shallow=False)

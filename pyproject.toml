@@ -4,25 +4,46 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "r2s"
-version = "0.1.0"
+version = "0.2.0"
 description = "Reference runtime for the r2s research-to-ship JSON Schema contract"
 readme = "README.md"
 requires-python = ">=3.11"
-license = { text = "MIT" }
+license = "MIT"
 authors = [{ name = "ao3575911" }]
+keywords = ["json-schema", "research", "handoff", "ranking", "specification"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Libraries",
+  "Typing :: Typed",
+]
 dependencies = [
   "jsonschema>=4.22,<5",
   "referencing>=0.35,<1",
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8,<9"]
+dev = ["pytest>=8,<9", "build>=1.2,<2", "twine>=5,<7"]
+
+[project.urls]
+Homepage = "https://github.com/ao3575911/r2s"
+Repository = "https://github.com/ao3575911/r2s"
+Changelog = "https://github.com/ao3575911/r2s/blob/main/CHANGELOG.md"
+Issues = "https://github.com/ao3575911/r2s/issues"
+Documentation = "https://github.com/ao3575911/r2s/blob/main/docs/SPEC.md"
 
 [project.scripts]
 r2s = "r2s.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+r2s = ["schemas/*.schema.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

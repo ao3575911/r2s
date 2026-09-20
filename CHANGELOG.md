@@ -14,6 +14,16 @@ Style: [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [0.2.2] — 2026-09-21
+
+### Added
+- Schema-parity CI gate (`scripts/check_schema_parity.py` + pytest workflow step) so root `schemas/` and packaged `src/r2s/schemas/` cannot drift (PR #14)
+- Cycle 2–3 dogfood artefacts: ranked boards, handoffs, and ship outcomes under `examples/cycle2/`, `examples/cycle3/`, and `examples/outcome.*.example.json` (GDk9 as second consumer)
+- Docs handoffs for cycle 2/3 ships (`docs/handoffs/cycle2.md`, `docs/handoffs/cycle3.md`)
+
+### Changed
+- Package version 0.2.1 → 0.2.2
+
 ## [0.2.1] — 2026-09-20
 
 ### Added

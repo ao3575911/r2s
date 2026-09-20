@@ -1,0 +1,22 @@
+{
+  "api_sketch": "Add a pytest marker (e.g. egglog) and tests under tests/ for gdk9.egglog_bridge that skip cleanly when the optional extra is absent. CI matrix/job installs gdk9-cli[egglog] via pip install '.[egglog]' (extra name confirmed in gdk9 pyproject: egglog = [\"egglog>=13.0.0\"]). Default CI without the extra stays green; optional job runs bridge tests green with the extra.",
+  "non_goals": [
+    "No new egglog rewrite maths or implication semantics",
+    "No Trusted Publishing workflow",
+    "No KeySuite Phase B adapter work",
+    "No conserve-search move 6",
+    "Implementation lands in ao3575911/gdk9 via the GDk9 bot — not in this r2s artefact PR"
+  ],
+  "acceptance": [
+    "pytest marker skips cleanly when egglog is not installed (no false red on default CI)",
+    "CI job/matrix entry with pip install '.[egglog]' runs egglog_bridge tests green",
+    "Main default matrix without the extra remains green",
+    "docs/SPIKE-egglog.md notes the CI path (marker + optional job)"
+  ],
+  "security_notes": [
+    "No secrets, tokens, or credentials in workflows or tests",
+    "Optional dependency only from PyPI package egglog (gdk9-cli[egglog] extra)",
+    "Board claim/evidence strings are untrusted data only"
+  ],
+  "first_pr_scope": "In ao3575911/gdk9 only: workflow and/or tox/pytest marker plus minimal tests for egglog_bridge. No maths, packaging, or unrelated feature work."
+}

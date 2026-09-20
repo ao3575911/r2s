@@ -1,0 +1,12 @@
+{
+  "card_id": "gdk9-conserve-move5",
+  "result": "ship",
+  "recorded_at": "2026-09-20T15:28:29Z",
+  "time_to_green_hours": 0.15,
+  "second_consumer": true,
+  "earn_hypothesis_held": true,
+  "commit_sha": "bc58029380db04fe76a7c2cce7819734331a3fbe",
+  "merge_commit_sha": "bc58029380db04fe76a7c2cce7819734331a3fbe",
+  "pr": 19,
+  "notes": "GDk9 bot implemented conserve-search Move 5 (fuse\u2192split\u2192fuse + same-names mismatch) after r2s cycle3 handoff (PR #15). Landed in ao3575911/gdk9 via PR #19 merge bc58029380db04fe76a7c2cce7819734331a3fbe: Move 5 section in docs/EXPERIMENT_CONSERVE_SEARCH.md + 2 pytest cases; Moves 1\u20134 green; no new deps/CLI. Next board card: gdk9-egglog-ci-optional."
+}

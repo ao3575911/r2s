@@ -126,7 +126,7 @@ def _card(cid: str, s_factor: float, status: str) -> dict:
 def test_import_r2s():
     import r2s
 
-    assert r2s.__version__ == "0.2.0"
+    assert r2s.__version__ == "0.2.1"
 
 
 def test_packaged_schemas_match_repo_root():

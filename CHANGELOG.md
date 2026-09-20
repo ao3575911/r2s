@@ -14,6 +14,15 @@ Style: [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [0.2.1] — 2026-09-20
+
+### Added
+- First production PyPI publish via Trusted Publishing (`v0.2.1` GitHub Release)
+
+### Changed
+- Package version bump 0.2.0 → 0.2.1 (0.2.0 remains on TestPyPI)
+
+
 **Packaging PR #10 merge tip:** `dc824bcee62f6f9ec92ee6755f2ebe4fa8317588`
 
 ### Added

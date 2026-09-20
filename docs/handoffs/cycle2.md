@@ -23,3 +23,12 @@ See [`examples/cycle2/handoff.json`](../../examples/cycle2/handoff.json).
 ## Next (active build slot 2)
 
 `r2s-schema-parity-ci` — CI gate that root `schemas/` and packaged `src/r2s/schemas/` stay identical.
+
+## Cycle 2 ship (verified)
+
+| | |
+|-|-|
+| PR | [#13](https://github.com/ao3575911/r2s/pull/13) |
+| Merge commit | `86fea0e06782208121b91a928df91513a3663a51` |
+| Outcome | [`examples/outcome.cycle2.example.json`](../../examples/outcome.cycle2.example.json) |
+| Result | **ship** |

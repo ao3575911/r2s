@@ -1,0 +1,12 @@
+{
+  "card_id": "r2s-cycle2-board-artefact",
+  "result": "ship",
+  "recorded_at": "2026-09-20T14:43:37Z",
+  "time_to_green_hours": 0.25,
+  "second_consumer": true,
+  "earn_hypothesis_held": true,
+  "commit_sha": "86fea0e06782208121b91a928df91513a3663a51",
+  "merge_commit_sha": "86fea0e06782208121b91a928df91513a3663a51",
+  "pr": 13,
+  "notes": "Cycle 2 dogfood: r2s CLI ranked board; winner artefact shipped via PR #13. First closed loop using shipped runtime as a tool (CLI as second_consumer). Prod PyPI parked (#12). Next: r2s-schema-parity-ci."
+}

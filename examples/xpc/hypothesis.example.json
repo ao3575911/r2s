@@ -1,0 +1,15 @@
+{
+  "id": "gdk9-compose-adapter-conserves",
+  "claim": "A KeySuite compose.basic adapter maps name concatenation without violating kernel fusion conservation.",
+  "falsifier": "Adapter output energy differs from fusion_rule energy by more than 1e-9 on the vendored vector.",
+  "success_metric": "pytest: name text match AND |ΔE| ≤ 1e-9",
+  "assumptions": [
+    "Kernel fusion_rule semantics unchanged",
+    "Vector compose.basic.001 is authoritative"
+  ],
+  "status": "supported",
+  "links": {
+    "r2s_card_id": "gdk9-keysuite-phase-b-spike",
+    "repo": "ao3575911/gdk9"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ao3575911.github.io/xpc/schemas/result.schema.json",
+  "title": "XPC Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "hypothesis_id", "protocol_id", "verdict", "recorded_at"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "hypothesis_id": { "type": "string", "minLength": 1 },
+    "protocol_id": { "type": "string", "minLength": 1 },
+    "verdict": {
+      "type": "string",
+      "enum": ["pass", "fail", "inconclusive"]
+    },
+    "recorded_at": { "type": "string", "format": "date-time" },
+    "measurements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "value"],
+        "properties": {
+          "name": { "type": "string" },
+          "value": {},
+          "unit": { "type": "string" }
+        }
+      },
+      "default": []
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "commit_sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "notes": { "type": "string" }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "result-compose-basic-001",
+  "hypothesis_id": "gdk9-compose-adapter-conserves",
+  "protocol_id": "proto-compose-basic-001",
+  "verdict": "pass",
+  "recorded_at": "2026-09-20T15:55:00Z",
+  "measurements": [
+    { "name": "delta_energy", "value": 0.0, "unit": "1" },
+    { "name": "text_match", "value": true }
+  ],
+  "evidence_refs": [
+    "https://github.com/ao3575911/gdk9/pull/22"
+  ],
+  "commit_sha": "6199380cbbfdc41f2807bfee5daba02db9227c33",
+  "notes": "Phase B spike: compose remains partial (no FSM); conservation held."
+}

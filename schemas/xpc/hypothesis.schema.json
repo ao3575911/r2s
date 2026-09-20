@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ao3575911.github.io/xpc/schemas/hypothesis.schema.json",
+  "title": "XPC Hypothesis",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "claim", "falsifier", "success_metric", "status"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1, "description": "Stable slug." },
+    "claim": { "type": "string", "minLength": 1, "description": "One sentence that must become true or false." },
+    "falsifier": { "type": "string", "minLength": 1, "description": "Observable condition that kills the claim." },
+    "success_metric": { "type": "string", "minLength": 1, "description": "How success is measured." },
+    "assumptions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "ready", "running", "supported", "refuted", "abandoned"]
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "r2s_card_id": { "type": "string" },
+        "repo": { "type": "string", "pattern": "^[^/\\s]+/[^/\\s]+$" }
+      }
+    },
+    "notes": { "type": "string" }
+  }
+}

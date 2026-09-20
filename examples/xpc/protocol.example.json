@@ -1,0 +1,12 @@
+{
+  "id": "proto-compose-basic-001",
+  "hypothesis_id": "gdk9-compose-adapter-conserves",
+  "steps": [
+    { "n": 1, "action": "Load vendored compose.basic.001 JSONL row", "expect": "tokens A,B,SPACE → AB" },
+    { "n": 2, "action": "Run adapter name mapping", "expect": "text == AB" },
+    { "n": 3, "action": "Compare fusion energy to adapter energy", "expect": "|ΔE| ≤ 1e-9" }
+  ],
+  "controls": ["Do not edit gdk9.kernel semantics"],
+  "environment": { "kind": "ci", "detail": "pytest on GitHub Actions" },
+  "inputs": ["conformance/vectors/compose.basic.001"]
+}

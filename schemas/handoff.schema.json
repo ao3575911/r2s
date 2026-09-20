@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ao3575911.github.io/r2s/schemas/handoff.schema.json",
+  "title": "R2S Handoff Packet",
+  "description": "Fixed 7-part ship handoff for Builder (or any implementer).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "repo",
+    "claim",
+    "api_sketch",
+    "non_goals",
+    "acceptance",
+    "security_notes",
+    "first_pr_scope"
+  ],
+  "properties": {
+    "card_id": {
+      "type": "string"
+    },
+    "repo": {
+      "type": "string",
+      "pattern": "^[^/\\s]+/[^/\\s]+$"
+    },
+    "claim": {
+      "type": "string",
+      "minLength": 1
+    },
+    "api_sketch": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Public surface the outside world sees (for a spec repo: schemas and docs paths)."
+    },
+    "non_goals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "acceptance": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "security_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "first_pr_scope": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

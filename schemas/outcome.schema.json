@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ao3575911.github.io/r2s/schemas/outcome.schema.json",
+  "title": "R2S Outcome",
+  "description": "Closed-loop result used to update ranking judgment (human-applied in v0).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "card_id",
+    "result",
+    "recorded_at"
+  ],
+  "properties": {
+    "card_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "result": {
+      "type": "string",
+      "enum": [
+        "ship",
+        "kill",
+        "learn"
+      ]
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "time_to_green_hours": {
+      "type": "number",
+      "minimum": 0
+    },
+    "second_consumer": {
+      "type": "boolean",
+      "description": "Did a second module/repo consume the API?"
+    },
+    "earn_hypothesis_held": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "kill_reason": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "result": {
+            "const": "kill"
+          }
+        },
+        "required": [
+          "result"
+        ]
+      },
+      "then": {
+        "required": [
+          "kill_reason"
+        ]
+      }
+    }
+  ]
+}

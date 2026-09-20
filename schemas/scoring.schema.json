@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ao3575911.github.io/r2s/schemas/scoring.schema.json",
+  "title": "R2S Scoring Rules",
+  "description": "Normative scoring and kill rules for implementers.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "formula",
+    "kill_rules",
+    "rank_policy"
+  ],
+  "properties": {
+    "formula": {
+      "type": "string",
+      "const": "S = (novelty * evidence_strength * usability * dependency_fit) / (hours + compute_cost + blast_radius)"
+    },
+    "denominator_guard": {
+      "type": "string",
+      "description": "If hours + compute_cost + blast_radius == 0, treat as invalid card (do not score)."
+    },
+    "kill_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "rank_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "order",
+        "tie_break"
+      ],
+      "properties": {
+        "order": {
+          "type": "string",
+          "const": "descending_S"
+        },
+        "tie_break": {
+          "type": "string",
+          "const": "ascending_id"
+        },
+        "max_active_builds": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ao3575911.github.io/r2s/schemas/board.schema.json",
+  "title": "R2S Board",
+  "description": "Hypothesis board: a set of cards plus ranking policy.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "cards"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "max_active_builds": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 2
+    },
+    "cards": {
+      "type": "array",
+      "items": {
+        "$ref": "card.schema.json"
+      }
+    }
+  }
+}

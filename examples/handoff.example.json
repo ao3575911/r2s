@@ -1,0 +1,24 @@
+{
+  "card_id": "r2s-spec-v0",
+  "repo": "ao3575911/r2s",
+  "claim": "A research-to-ship loop can be expressed as versioned JSON schemas plus docs with no runtime code.",
+  "api_sketch": "Public surface is schemas/*.schema.json, docs/SPEC.md, examples/board.example.json. Consumers validate cards/boards/handoffs/outcomes against these schemas.",
+  "non_goals": [
+    "No reference implementation (Python/TS) in v0",
+    "No GitHub API, agents, or LLM calls",
+    "No auto-PR or network I/O",
+    "No secret handling"
+  ],
+  "acceptance": [
+    "examples/board.example.json validates against schemas/board.schema.json",
+    "examples/handoff.example.json validates against schemas/handoff.schema.json",
+    "docs/SPEC.md defines scoring formula and kill rules matching schemas/scoring.schema.json",
+    "README states status machine and trust boundaries"
+  ],
+  "security_notes": [
+    "All card string fields are untrusted data; validators must not execute claim/evidence text",
+    "No credentials in repo",
+    "Schemas are the trust contract between proposers and implementers"
+  ],
+  "first_pr_scope": "Add schemas/, docs/SPEC.md, examples/, README.md. No application code."
+}

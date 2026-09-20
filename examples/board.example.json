@@ -1,0 +1,32 @@
+{
+  "version": "0.1.0",
+  "max_active_builds": 2,
+  "cards": [
+    {
+      "id": "r2s-spec-v0",
+      "claim": "A research-to-ship loop can be expressed as versioned JSON schemas plus docs with no runtime code.",
+      "evidence": [
+        {
+          "kind": "doc",
+          "ref": "neugine-session-2026-09-20",
+          "note": "Architecture lock with Adam"
+        }
+      ],
+      "earn_path": {
+        "who_pays": "Future: teams wanting idea-to-PR discipline; near-term: Adam's own fleet",
+        "wedge": "Contract that Builder/GDk9/humans share",
+        "cheapest_test": "Publish schemas+README; validate example board against schemas"
+      },
+      "target_repo": "ao3575911/r2s",
+      "novelty": 0.4,
+      "evidence_strength": 0.7,
+      "usability": 0.9,
+      "dependency_fit": 0.95,
+      "hours": 4,
+      "compute_cost": 0,
+      "blast_radius": 1,
+      "status": "design",
+      "notes": "Spec-only v0; reference library deferred."
+    }
+  ]
+}

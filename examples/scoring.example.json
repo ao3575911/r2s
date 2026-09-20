@@ -1,0 +1,15 @@
+{
+  "formula": "S = (novelty * evidence_strength * usability * dependency_fit) / (hours + compute_cost + blast_radius)",
+  "denominator_guard": "If hours + compute_cost + blast_radius == 0, treat as invalid card (do not score).",
+  "kill_rules": [
+    "usability near 0",
+    "dependency_fit near 0",
+    "missing target_repo when status is design, build, or ship",
+    "optional: no earn_path when card is intended to fund work"
+  ],
+  "rank_policy": {
+    "order": "descending_S",
+    "tie_break": "ascending_id",
+    "max_active_builds": 2
+  }
+}

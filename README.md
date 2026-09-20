@@ -16,7 +16,8 @@
 <p align="center">
   <a href="docs/SPEC.md"><img src="https://img.shields.io/badge/spec-v0.1.0-5eead4?style=flat-square" alt="spec v0.1.0" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-0f1115?style=flat-square" alt="MIT" /></a>
-  <img src="https://img.shields.io/badge/runtime-none-8b949e?style=flat-square" alt="spec only" />
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/changelog-SHA%20verified-5eead4?style=flat-square" alt="changelog" /></a>
+  <img src="https://img.shields.io/badge/runtime-Python%203.11%2B-8b949e?style=flat-square" alt="Python runtime" />
 </p>
 
 ---
@@ -27,7 +28,7 @@
 
 You normalize research into **cards**, **rank** them with an explicit score, emit a fixed **handoff** for whoever builds, then record an **outcome** so the next cycle is smarter.
 
-v0.1.0 ships **schemas + docs + examples only**. Runtimes come later and must obey this contract.
+**v0.1.0** is the schema contract; **v0.2.0** adds a thin Python reference runtime. Both obey `docs/SPEC.md`. Public history with full commit SHAs: [`CHANGELOG.md`](CHANGELOG.md).
 
 ## Quick start
 
@@ -73,6 +74,12 @@ examples/         worked board + handoff (this repo as the sample)
 ## Security
 
 Card fields are **untrusted data**. Validators must not execute claim or evidence strings. This repo holds no credentials and no network clients.
+
+## Changelog & identity
+
+Ship history is **SHA-verified** in [`CHANGELOG.md`](CHANGELOG.md). Security posture: [`SECURITY.md`](SECURITY.md).
+
+Current `main` tip at publish of this note is recorded in the changelog Unreleased/latest section after each merge.
 
 ## License
 

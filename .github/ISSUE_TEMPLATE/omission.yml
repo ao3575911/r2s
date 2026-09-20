@@ -1,0 +1,17 @@
+name: Public omission / hardening
+description: Missing setting, docs, release, or identity surface
+title: "[omit] "
+labels: ["hardening"]
+body:
+  - type: textarea
+    id: gap
+    attributes:
+      label: What’s missing
+      description: Setting, wiki, release, badge, SHA pin, etc.
+    validations:
+      required: true
+  - type: input
+    id: sha
+    attributes:
+      label: Related commit SHA (if any)
+      placeholder: 40-char hex

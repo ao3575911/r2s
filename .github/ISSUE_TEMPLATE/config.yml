@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Spec discussion
+    url: https://github.com/ao3575911/r2s/blob/main/docs/SPEC.md
+    about: Normative rules live in docs/SPEC.md — prefer PRs for contract changes.

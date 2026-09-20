@@ -43,6 +43,21 @@
     },
     "kill_reason": {
       "type": "string"
+    },
+    "commit_sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$",
+      "description": "Git commit SHA that realizes this outcome (usually the merge or tip commit)."
+    },
+    "merge_commit_sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$",
+      "description": "Merge commit SHA when the ship landed via PR."
+    },
+    "pr": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Pull request number when applicable."
     }
   },
   "allOf": [

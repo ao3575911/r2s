@@ -5,5 +5,6 @@
   "time_to_green_hours": 2.5,
   "second_consumer": false,
   "earn_hypothesis_held": true,
-  "notes": "Public ao3575911/r2s with schemas, SPEC, examples, brand harden. Spec-only claim held. First external consumer of the API still pending (reference runtime)."
+  "notes": "Public ao3575911/r2s with schemas, SPEC, examples, brand. Spec-only claim held. initial=9ca117eaa83d2abc18d2d233eb12f6ac6ce21af6; brand=a96fd16ff8a461b0fb6d43b5686edfe8a6041613; outcome_commit=8b5e0f65c275645be0fbc699ff22a69e53167711.",
+  "commit_sha": "8b5e0f65c275645be0fbc699ff22a69e53167711"
 }

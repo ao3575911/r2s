@@ -53,3 +53,13 @@ See [`examples/outcome.example.json`](../../examples/outcome.example.json) — `
 ## Cycle 1 outcome
 
 **ship** — merged https://github.com/ao3575911/r2s/pull/1 at 2026-09-20T13:01:11Z. See [`examples/outcome.runtime.example.json`](../../examples/outcome.runtime.example.json).
+
+## Cycle 1 ship (verified)
+
+| | |
+|-|-|
+| PR | [#1](https://github.com/ao3575911/r2s/pull/1) |
+| Merge commit | `8eb906635969c28b5d4fa8893587f4452f63a951` |
+| Feature commit | `0f60af7911fd361bdc1549f05a63f399d84712eb` |
+| Outcome commit | `2133fb986be9c015179f9aedb1203b0f61d13000` |
+| Outcome file | [`examples/outcome.runtime.example.json`](../../examples/outcome.runtime.example.json) |

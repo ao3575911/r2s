@@ -5,5 +5,8 @@
   "time_to_green_hours": 0.5,
   "second_consumer": false,
   "earn_hypothesis_held": true,
-  "notes": "Merged PR #1 (feat/runtime-v0) \u2014 Python r2s package with score/should_kill/rank/handoff/load_*, CLI, pytest+Actions. CI green. Spec remains normative; runtime is first in-repo consumer of the schemas."
+  "notes": "Merged PR #1 \u2014 Python r2s runtime. CI green. Spec normative; runtime first in-repo consumer. feature=0f60af7911fd361bdc1549f05a63f399d84712eb; chore=72f1fb9875f4586ca0ad3ac4e59a046031d4bd75; merge=8eb906635969c28b5d4fa8893587f4452f63a951; outcome=2133fb986be9c015179f9aedb1203b0f61d13000.",
+  "commit_sha": "2133fb986be9c015179f9aedb1203b0f61d13000",
+  "merge_commit_sha": "8eb906635969c28b5d4fa8893587f4452f63a951",
+  "pr": 1
 }

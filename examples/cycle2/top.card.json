@@ -1,0 +1,31 @@
+{
+  "id": "r2s-cycle2-board-artefact",
+  "claim": "examples/cycle2/board.json plus ranked CLI output are committed as the dogfood artefact for this session.",
+  "evidence": [
+    {
+      "kind": "doc",
+      "ref": "docs/SPEC.md",
+      "note": "Loop requires board \u2192 rank \u2192 handoff \u2192 outcome"
+    },
+    {
+      "kind": "repo",
+      "ref": "src/r2s/cli.py",
+      "note": "CLI rank/score/handoff ready"
+    }
+  ],
+  "earn_path": {
+    "who_pays": "Adam (process proof)",
+    "wedge": "First closed loop using the shipped runtime as a tool",
+    "cheapest_test": "Write board, run r2s rank, commit outputs"
+  },
+  "target_repo": "ao3575911/r2s",
+  "novelty": 0.2,
+  "evidence_strength": 0.8,
+  "usability": 0.85,
+  "dependency_fit": 0.95,
+  "hours": 0.75,
+  "compute_cost": 0,
+  "blast_radius": 0.5,
+  "status": "design",
+  "notes": "Meta card \u2014 may pair with parity as the ship."
+}

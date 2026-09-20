@@ -1,0 +1,99 @@
+{
+  "version": "0.1.0",
+  "max_active_builds": 2,
+  "cards": [
+    {
+      "id": "r2s-schema-parity-ci",
+      "claim": "CI fails when repo-root schemas/ and src/r2s/schemas/ diverge byte-for-byte.",
+      "evidence": [
+        {
+          "kind": "repo",
+          "ref": "https://github.com/ao3575911/r2s",
+          "note": "Packaged schemas added in PR #10; drift risk is live"
+        },
+        {
+          "kind": "spike",
+          "ref": "tests/test_runtime.py::test_packaged_schemas_match_repo_root",
+          "note": "Unit test exists; not gated in a dedicated CI job name"
+        }
+      ],
+      "earn_path": {
+        "who_pays": "Adam / future package consumers",
+        "wedge": "Stops silent contract drift between normative schemas and the wheel",
+        "cheapest_test": "Add scripts/check_schema_parity.py + CI step; break one file and watch CI fail"
+      },
+      "target_repo": "ao3575911/r2s",
+      "novelty": 0.25,
+      "evidence_strength": 0.9,
+      "usability": 0.95,
+      "dependency_fit": 0.98,
+      "hours": 1.5,
+      "compute_cost": 0,
+      "blast_radius": 1,
+      "status": "design",
+      "notes": "Cycle 2 dogfood candidate \u2014 shippable tonight without PyPI login."
+    },
+    {
+      "id": "r2s-prod-pypi-v021",
+      "claim": "pip install r2s==0.2.1 succeeds from pypi.org after Trusted Publisher is linked.",
+      "evidence": [
+        {
+          "kind": "outcome",
+          "ref": "https://test.pypi.org/project/r2s/0.2.0/",
+          "note": "TestPyPI Trusted Publishing proven"
+        },
+        {
+          "kind": "other",
+          "ref": "https://github.com/ao3575911/r2s/issues/12",
+          "note": "Prod blocked on login cool-down + missing pypi publisher"
+        }
+      ],
+      "earn_path": {
+        "who_pays": "Public install surface",
+        "wedge": "pip install r2s",
+        "cheapest_test": "Add pypi Trusted Publisher; re-run release workflow"
+      },
+      "target_repo": "ao3575911/r2s",
+      "novelty": 0.1,
+      "evidence_strength": 0.85,
+      "usability": 0.9,
+      "dependency_fit": 0.9,
+      "hours": 0.5,
+      "compute_cost": 0,
+      "blast_radius": 2,
+      "status": "design",
+      "notes": "High value but externally blocked right now \u2014 expect lower rank vs parity CI while login locked."
+    },
+    {
+      "id": "r2s-cycle2-board-artefact",
+      "claim": "examples/cycle2/board.json plus ranked CLI output are committed as the dogfood artefact for this session.",
+      "evidence": [
+        {
+          "kind": "doc",
+          "ref": "docs/SPEC.md",
+          "note": "Loop requires board \u2192 rank \u2192 handoff \u2192 outcome"
+        },
+        {
+          "kind": "repo",
+          "ref": "src/r2s/cli.py",
+          "note": "CLI rank/score/handoff ready"
+        }
+      ],
+      "earn_path": {
+        "who_pays": "Adam (process proof)",
+        "wedge": "First closed loop using the shipped runtime as a tool",
+        "cheapest_test": "Write board, run r2s rank, commit outputs"
+      },
+      "target_repo": "ao3575911/r2s",
+      "novelty": 0.2,
+      "evidence_strength": 0.8,
+      "usability": 0.85,
+      "dependency_fit": 0.95,
+      "hours": 0.75,
+      "compute_cost": 0,
+      "blast_radius": 0.5,
+      "status": "design",
+      "notes": "Meta card \u2014 may pair with parity as the ship."
+    }
+  ]
+}

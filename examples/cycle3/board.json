@@ -1,0 +1,140 @@
+{
+  "version": "0.1.0",
+  "max_active_builds": 2,
+  "cards": [
+    {
+      "id": "gdk9-conserve-move5",
+      "claim": "Add conserve-search move 5 as a failing-first pytest that extends EXPERIMENT_CONSERVE_SEARCH (multi-step fuse/split chain or depth-bounded reject of a new naive-accepts/kernel-rejects beat).",
+      "evidence": [
+        {
+          "kind": "doc",
+          "ref": "https://github.com/ao3575911/gdk9/blob/main/docs/EXPERIMENT_CONSERVE_SEARCH.md",
+          "note": "Move 4 done; next research beat not yet coded"
+        },
+        {
+          "kind": "repo",
+          "ref": "https://github.com/ao3575911/gdk9/blob/main/tests/experiment/test_conserve_vs_naive.py",
+          "note": "Moves 1–4 covered as executable experiment"
+        },
+        {
+          "kind": "other",
+          "ref": "https://github.com/ao3575911/gdk9/pull/17",
+          "note": "PR#17 conserve move 4; PR#16 move 3; PR#18 handbook CLI doctest gate"
+        }
+      ],
+      "earn_path": {
+        "who_pays": "GDk9 research loop / Adam",
+        "wedge": "Next conserved-search beat without inventing new maths",
+        "cheapest_test": "Add one failing pytest + doc section for move 5; green after kernel path exists or xfail documented"
+      },
+      "target_repo": "ao3575911/gdk9",
+      "novelty": 0.45,
+      "evidence_strength": 0.85,
+      "usability": 0.9,
+      "dependency_fit": 0.95,
+      "hours": 2.5,
+      "compute_cost": 0,
+      "blast_radius": 1,
+      "status": "design",
+      "notes": "Cycle 3 second-consumer card — implementation belongs to GDk9 bot, not this r2s PR."
+    },
+    {
+      "id": "gdk9-trusted-publish",
+      "claim": "GitHub Actions Trusted Publishing publishes gdk9-cli to TestPyPI (then PyPI) on release, mirroring the r2s publish.yml pattern.",
+      "evidence": [
+        {
+          "kind": "doc",
+          "ref": "https://github.com/ao3575911/gdk9/blob/main/docs/RELEASE.md",
+          "note": "Local/TestPyPI twine path only; Trusted Publishing deferred"
+        },
+        {
+          "kind": "other",
+          "ref": "https://github.com/ao3575911/gdk9/releases/tag/v0.3.0",
+          "note": "gdk9-cli 0.3.0 on GitHub Releases; install via git tag today"
+        },
+        {
+          "kind": "repo",
+          "ref": "https://github.com/ao3575911/r2s/blob/main/.github/workflows/publish.yml",
+          "note": "r2s Trusted Publishing workflow as pattern (other repo)"
+        }
+      ],
+      "earn_path": {
+        "who_pays": "Public install surface for gdk9-cli",
+        "wedge": "pip install gdk9-cli from TestPyPI/PyPI on release",
+        "cheapest_test": "Add publish.yml + TestPyPI Trusted Publisher; cut a dry-run tag"
+      },
+      "target_repo": "ao3575911/gdk9",
+      "novelty": 0.2,
+      "evidence_strength": 0.75,
+      "usability": 0.95,
+      "dependency_fit": 0.8,
+      "hours": 2,
+      "compute_cost": 0,
+      "blast_radius": 2,
+      "status": "design",
+      "notes": "Lower novelty, higher blast (release surface); needs publisher setup outside code."
+    },
+    {
+      "id": "gdk9-egglog-ci-optional",
+      "claim": "CI job (or tox/pytest marker) runs egglog bridge tests when the egglog extra is installed, and skips cleanly without it — no false red on main.",
+      "evidence": [
+        {
+          "kind": "spike",
+          "ref": "https://github.com/ao3575911/gdk9/blob/main/docs/SPIKE-egglog.md",
+          "note": "Spike verdict YES; egglog optional extra documented"
+        },
+        {
+          "kind": "repo",
+          "ref": "https://github.com/ao3575911/gdk9/tree/main/gdk9/egglog_bridge",
+          "note": "dr_egglog.py + fallback.py live in-tree"
+        }
+      ],
+      "earn_path": {
+        "who_pays": "CI green for default installs",
+        "wedge": "Optional-extra tests without poisoning main",
+        "cheapest_test": "pytest marker + CI matrix job with pip install '.[egglog]'; assert skip without extra"
+      },
+      "target_repo": "ao3575911/gdk9",
+      "novelty": 0.35,
+      "evidence_strength": 0.8,
+      "usability": 0.85,
+      "dependency_fit": 0.9,
+      "hours": 1.75,
+      "compute_cost": 0,
+      "blast_radius": 1,
+      "status": "design",
+      "notes": "Good second active-build slot — small CI hygiene after conserve move 5."
+    },
+    {
+      "id": "gdk9-keysuite-phase-b-spike",
+      "claim": "One minimal Phase B conformance adapter test that loads a KeySuite vector JSONL row and asserts kernel compose/imply behavior OR explicitly xfails with a documented gap.",
+      "evidence": [
+        {
+          "kind": "doc",
+          "ref": "https://github.com/ao3575911/gdk9/blob/main/docs/KEYSUITE_BRIDGE.md",
+          "note": "Phase A docs-only inventory; no adapter code yet"
+        },
+        {
+          "kind": "other",
+          "ref": "https://github.com/ao3575911/gdk9/pull/10",
+          "note": "Spec 7 KeySuite conformance inventory PR"
+        }
+      ],
+      "earn_path": {
+        "who_pays": "Conformance bridge research",
+        "wedge": "Tiny adapter or honest xfail — no invented maths",
+        "cheapest_test": "Load one JSONL row; assert or xfail with gap note in KEYSUITE_BRIDGE.md"
+      },
+      "target_repo": "ao3575911/gdk9",
+      "novelty": 0.7,
+      "evidence_strength": 0.45,
+      "usability": 0.6,
+      "dependency_fit": 0.7,
+      "hours": 4,
+      "compute_cost": 0,
+      "blast_radius": 2.5,
+      "status": "design",
+      "notes": "Higher novelty, weaker evidence; keep scope to one vector — do not invent implication semantics."
+    }
+  ]
+}

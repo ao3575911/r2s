@@ -1,0 +1,36 @@
+{
+  "id": "gdk9-conserve-move5",
+  "claim": "Add conserve-search move 5 as a failing-first pytest that extends EXPERIMENT_CONSERVE_SEARCH (multi-step fuse/split chain or depth-bounded reject of a new naive-accepts/kernel-rejects beat).",
+  "evidence": [
+    {
+      "kind": "doc",
+      "ref": "https://github.com/ao3575911/gdk9/blob/main/docs/EXPERIMENT_CONSERVE_SEARCH.md",
+      "note": "Move 4 done; next research beat not yet coded"
+    },
+    {
+      "kind": "repo",
+      "ref": "https://github.com/ao3575911/gdk9/blob/main/tests/experiment/test_conserve_vs_naive.py",
+      "note": "Moves 1\u20134 covered as executable experiment"
+    },
+    {
+      "kind": "other",
+      "ref": "https://github.com/ao3575911/gdk9/pull/17",
+      "note": "PR#17 conserve move 4; PR#16 move 3; PR#18 handbook CLI doctest gate"
+    }
+  ],
+  "earn_path": {
+    "who_pays": "GDk9 research loop / Adam",
+    "wedge": "Next conserved-search beat without inventing new maths",
+    "cheapest_test": "Add one failing pytest + doc section for move 5; green after kernel path exists or xfail documented"
+  },
+  "target_repo": "ao3575911/gdk9",
+  "novelty": 0.45,
+  "evidence_strength": 0.85,
+  "usability": 0.9,
+  "dependency_fit": 0.95,
+  "hours": 2.5,
+  "compute_cost": 0,
+  "blast_radius": 1,
+  "status": "design",
+  "notes": "Cycle 3 second-consumer card \u2014 implementation belongs to GDk9 bot, not this r2s PR."
+}

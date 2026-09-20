@@ -1,0 +1,24 @@
+{
+  "card_id": "gdk9-conserve-move5",
+  "repo": "ao3575911/gdk9",
+  "claim": "Add conserve-search move 5 as a failing-first pytest that extends EXPERIMENT_CONSERVE_SEARCH (multi-step fuse/split chain or depth-bounded reject of a new naive-accepts/kernel-rejects beat).",
+  "api_sketch": "Extend docs/EXPERIMENT_CONSERVE_SEARCH.md with a Move 5 section and add failing-first pytest(s) in tests/experiment/test_conserve_vs_naive.py (e.g. multi-step fuse\u2192split\u2192fuse chain under max_depth bound, OR a new naive-accepts / kernel-rejects energy-mismatch beat). Public surface remains gdk9.kernel ImplicationEngine + fusion_rule/split_rule; no new CLI flags required for the first PR.",
+  "non_goals": [
+    "Do not invent new energy laws or implication semantics",
+    "Do not implement Trusted Publishing, egglog CI, or KeySuite Phase B in this PR",
+    "Do not change gdk9 packaging/version or release workflows",
+    "Implementation lands in ao3575911/gdk9 via the GDk9 bot \u2014 not in this r2s artefact PR"
+  ],
+  "acceptance": [
+    "docs/EXPERIMENT_CONSERVE_SEARCH.md documents Move 5 hypothesis, fail criteria, and how to run",
+    "tests/experiment/test_conserve_vs_naive.py gains at least one Move 5 test that fails first then greens (or xfails with documented gap)",
+    "Existing Moves 1\u20134 tests remain green",
+    "No new dependencies; ruff critical lint still passes"
+  ],
+  "security_notes": [
+    "Board claim/evidence strings are untrusted data only",
+    "No secrets, tokens, or credentials in cycle3 artefacts or the GDk9 follow-on PR",
+    "Test fixtures must not load untrusted plugin code paths"
+  ],
+  "first_pr_scope": "In ao3575911/gdk9: one doc section for Move 5 + one or two pytest cases in tests/experiment/test_conserve_vs_naive.py only. Hand implementation to GDk9 bot (id 1398231)."
+}

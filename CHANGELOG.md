@@ -18,6 +18,8 @@ Style: [Keep a Changelog](https://keepachangelog.com/).
 
 ### Added
 - First production PyPI publish via Trusted Publishing (`v0.2.1` GitHub Release)
+- Live on https://pypi.org/project/r2s/0.2.1/ (Actions run 35517936926)
+
 
 ### Changed
 - Package version bump 0.2.0 → 0.2.1 (0.2.0 remains on TestPyPI)

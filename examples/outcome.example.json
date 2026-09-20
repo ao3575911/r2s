@@ -1,0 +1,9 @@
+{
+  "card_id": "r2s-spec-v0",
+  "result": "ship",
+  "recorded_at": "2026-09-20T12:31:06Z",
+  "time_to_green_hours": 2.5,
+  "second_consumer": false,
+  "earn_hypothesis_held": true,
+  "notes": "Public ao3575911/r2s with schemas, SPEC, examples, brand harden. Spec-only claim held. First external consumer of the API still pending (reference runtime)."
+}

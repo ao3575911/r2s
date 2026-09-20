@@ -1,0 +1,31 @@
+{
+  "id": "r2s-runtime-v0",
+  "claim": "A caller can load a board, score and rank cards per SPEC, apply kill rules, and emit a 7-part handoff packet \u2014 with no network I/O and no LLM calls.",
+  "evidence": [
+    {
+      "kind": "repo",
+      "ref": "https://github.com/ao3575911/r2s",
+      "note": "Normative schemas + SPEC shipped"
+    },
+    {
+      "kind": "outcome",
+      "ref": "examples/outcome.example.json",
+      "note": "Cycle 0 ship closed"
+    }
+  ],
+  "earn_path": {
+    "who_pays": "Near-term: Adam's fleet (Builder/Neugine). Later: public package users.",
+    "wedge": "One import that enforces the contract",
+    "cheapest_test": "pytest on score/rank/handoff with board.example.json"
+  },
+  "target_repo": "ao3575911/r2s",
+  "novelty": 0.35,
+  "evidence_strength": 0.85,
+  "usability": 0.9,
+  "dependency_fit": 0.95,
+  "hours": 6,
+  "compute_cost": 0,
+  "blast_radius": 2,
+  "status": "design",
+  "notes": "Cycle 1. Spec is source of truth; runtime implements only."
+}

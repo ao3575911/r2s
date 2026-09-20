@@ -1,0 +1,31 @@
+{
+  "card_id": "r2s-runtime-v0",
+  "repo": "ao3575911/r2s",
+  "claim": "A caller can load a board, score and rank cards per SPEC, apply kill rules, and emit a 7-part handoff packet \u2014 with no network I/O and no LLM calls.",
+  "api_sketch": "Python 3.11+ package `r2s` (or `r2s_runtime`): load_card/load_board from JSON; score(card)->float; rank(board)->list[Card]; killed(card)->bool|reason; handoff(card)->HandoffPacket; optional CLI `r2s rank board.json` and `r2s handoff card.json`. Validate inputs against schemas/ via jsonschema (Draft 2020-12). Public functions are pure given in-memory objects.",
+  "non_goals": [
+    "No GitHub API, git write, or auto-PR",
+    "No LLM / agent orchestration",
+    "No network I/O in library code",
+    "No secret handling",
+    "No changing normative SPEC rules (implement only)",
+    "No TypeScript port in this PR (may follow)"
+  ],
+  "acceptance": [
+    "pytest green",
+    "score matches SPEC formula; invalid when H+C+B==0",
+    "kill rules: usability\u22480, dependency_fit\u22480, missing target_repo at design+",
+    "rank: descending S, tie-break ascending id, respect max_active_builds",
+    "handoff() returns object validating against schemas/handoff.schema.json",
+    "examples/board.example.json loads, ranks, and produces a handoff for the top eligible card",
+    "pip install -e \".[dev]\" works; `python -c \"import r2s\"` succeeds",
+    "No network calls in unit tests"
+  ],
+  "security_notes": [
+    "Treat all card strings as untrusted; never eval/exec/shell on claim or evidence",
+    "Do not fetch evidence refs",
+    "Pin runtime deps; prefer stdlib + jsonschema (or pydantic) only",
+    "Library must not read env secrets"
+  ],
+  "first_pr_scope": "Add src/r2s/ (models, score, rank, handoff, validate), tests/, pyproject.toml. Keep schemas/ as source of truth \u2014 do not duplicate rules in prose. Optional thin CLI. No CI marketplace fluff beyond a basic pytest workflow."
+}

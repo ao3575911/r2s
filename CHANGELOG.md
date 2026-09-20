@@ -14,6 +14,8 @@ Style: [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+**main tip (identity harden):** 
+
 Public hardening tracked in GitHub Issues (social preview, release tags, etc.).
 
 ---

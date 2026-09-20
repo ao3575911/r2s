@@ -14,6 +14,8 @@ Style: [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+**Packaging PR #10 merge tip:** 
+
 ### Added
 - PyPI packaging metadata (0.2.0), Trusted Publishing workflow, packaged schemas for wheel installs
 - `docs/publishing.md` Trusted Publishing checklist

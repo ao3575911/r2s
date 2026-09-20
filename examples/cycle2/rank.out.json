@@ -1,0 +1,17 @@
+[
+  {
+    "id": "r2s-cycle2-board-artefact",
+    "score": 0.10336000000000001,
+    "status": "design"
+  },
+  {
+    "id": "r2s-schema-parity-ci",
+    "score": 0.08379,
+    "status": "design"
+  },
+  {
+    "id": "r2s-prod-pypi-v021",
+    "score": 0.027540000000000002,
+    "status": "design"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "api_sketch": "examples/cycle2/board.json (3 cards), examples/cycle2/rank.out.json (CLI rank output), examples/cycle2/handoff.json (7-part packet for winner), docs/handoffs/cycle2.md (human summary with SHAs).",
+  "non_goals": [
+    "No prod PyPI in this PR",
+    "No schema/runtime behavior change",
+    "No new dependencies"
+  ],
+  "acceptance": [
+    "examples/cycle2/board.json validates against schemas/board.schema.json",
+    "r2s rank examples/cycle2/board.json matches committed rank.out.json order",
+    "handoff JSON validates against schemas/handoff.schema.json",
+    "docs/handoffs/cycle2.md cites tip SHA after merge"
+  ],
+  "security_notes": [
+    "Board claim/evidence strings are untrusted data",
+    "No secrets in cycle2 artefacts"
+  ],
+  "first_pr_scope": "Add examples/cycle2/* and docs/handoffs/cycle2.md only."
+}

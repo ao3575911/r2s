@@ -13,8 +13,6 @@
 
 ## What
 
-Normalize one experiment:
-
 | Artifact | Job |
 |----------|-----|
 | `hypothesis` | Claim + falsifier + metric |
@@ -22,21 +20,19 @@ Normalize one experiment:
 | `result` | pass / fail / inconclusive |
 | `run` | Bind one cycle |
 
-Cycle 0 = **schemas + spec only** (no CLI yet).
+## Dogfood
+
+Real GDk9 experiment (conserved search vs naive join/split, moves 1–5):
+
+[`examples/gdk9-conserve-vs-naive/`](examples/gdk9-conserve-vs-naive/)
+
+Also: [`examples/gdk9-keysuite-compose/`](examples/gdk9-keysuite-compose/) (Phase B compose adapter).
 
 ## Quick start
 
-1. Read [`docs/SPEC.md`](docs/SPEC.md)
-2. Copy [`examples/`](examples/)
-3. Validate with any JSON Schema 2020-12 validator against [`schemas/`](schemas/)
-
-## Layout
-
-```text
-schemas/     hypothesis · protocol · result · run
-docs/SPEC.md normative rules
-examples/    worked cycle (GDk9 compose adapter)
-```
+1. [`docs/SPEC.md`](docs/SPEC.md)
+2. Copy an [`examples/`](examples/) cycle
+3. Validate against [`schemas/`](schemas/) (JSON Schema 2020-12)
 
 ## License
 

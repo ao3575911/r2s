@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.1] — 2026-09-21
+
+### Added
+- Dogfood cycle: `examples/gdk9-conserve-vs-naive/` from live GDk9 conserve-vs-naive experiment (PR ao3575911/gdk9#19, move 5)
+- Relocated KeySuite compose examples to `examples/gdk9-keysuite-compose/`
+
 ## [0.1.0] — 2026-09-21
 
 ### Added

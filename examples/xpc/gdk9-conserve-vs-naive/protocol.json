@@ -1,0 +1,47 @@
+{
+  "id": "proto-conserve-vs-naive-moves-1-5",
+  "hypothesis_id": "gdk9-conserve-beats-naive-validity",
+  "steps": [
+    {
+      "n": 1,
+      "action": "Build Expression.from_names([A,B]) and conserved target AB with matching total energy; run ImplicationEngine(fusion_rule).infer max_depth=2",
+      "expect": "Path found; every judgment conserved with |delta|≤1e-9"
+    },
+    {
+      "n": 2,
+      "action": "Naive adjacent-join BFS on names for mismatched Symbol(AB, wrong energy)",
+      "expect": "Naive reports found; conserved_kernel_proof returns None"
+    },
+    {
+      "n": 3,
+      "action": "Register split_rule; infer AB→A,B within max_depth=2; fuse→split round-trip",
+      "expect": "Conserved split path; round-trip restores A,B energies"
+    },
+    {
+      "n": 4,
+      "action": "Mismatched split target A@50,B@50: naive split by names; conserved_kernel_proof",
+      "expect": "Naive finds; infer may reach names; conserved proof is None (final-energy gate)"
+    },
+    {
+      "n": 5,
+      "action": "Apply fuse→split→fuse chain on conserved A,B; same-names wrong-energy (50,50) beat",
+      "expect": "Chain conserved and final AB energy matches source; same-names mismatch rejected"
+    }
+  ],
+  "controls": [
+    "Do not change KernelPrinciple / fuse energy law",
+    "Pytest is the experiment — theatre proofs fail the load-bearing energy gates"
+  ],
+  "environment": {
+    "kind": "ci",
+    "detail": "GitHub Actions pytest; local: pip install -e '.[dev]' && pytest -q tests/experiment/test_conserve_vs_naive.py"
+  },
+  "inputs": [
+    "docs/EXPERIMENT_CONSERVE_SEARCH.md",
+    "tests/experiment/test_conserve_vs_naive.py",
+    "gdk9.kernel.ImplicationEngine",
+    "gdk9.kernel.engine.fusion_rule",
+    "gdk9.kernel.engine.split_rule"
+  ],
+  "notes": "Moves 1–3 established fuse beat; move 4 split+mismatch; move 5 fuse→split→fuse + same-names mismatch."
+}

@@ -1,0 +1,12 @@
+{
+  "card_id": "gdk9-keysuite-phase-b-spike",
+  "result": "ship",
+  "recorded_at": "2026-09-20T15:56:00Z",
+  "time_to_green_hours": 0.05,
+  "second_consumer": true,
+  "earn_hypothesis_held": true,
+  "commit_sha": "6199380cbbfdc41f2807bfee5daba02db9227c33",
+  "merge_commit_sha": "6199380cbbfdc41f2807bfee5daba02db9227c33",
+  "pr": 22,
+  "notes": "GDk9 bot shipped KeySuite Phase B spike after r2s keysuite handoff. Landed in ao3575911/gdk9 via PR #22 merge 6199380cbbfdc41f2807bfee5daba02db9227c33: gdk9/keysuite_bridge/compose.py + vendored compose.basic.001 + 2 tests; KEYSUITE_BRIDGE Phase B documented. Compose remains partial; kernel unchanged. Cycle 3 complete: conserve-move5, egglog-ci-optional, trusted-publish, keysuite-phase-b-spike all shipped."
+}

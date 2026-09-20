@@ -1,0 +1,10 @@
+{
+  "id": "run-egglog-dr-spike-through-ci",
+  "hypothesis_id": "gdk9-egglog-dr-matches-fallback",
+  "protocol_id": "proto-egglog-dr-spike-and-ci",
+  "result_id": "result-egglog-dr-spike-yes",
+  "status": "complete",
+  "started_at": "2026-09-08T10:25:53Z",
+  "ended_at": "2026-09-20T15:31:03Z",
+  "notes": "Spike YES then CI optional prove gate (r2s cycle3 card gdk9-egglog-ci-optional)."
+}

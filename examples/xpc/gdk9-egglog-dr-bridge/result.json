@@ -1,0 +1,20 @@
+{
+  "id": "result-egglog-dr-spike-yes",
+  "hypothesis_id": "gdk9-egglog-dr-matches-fallback",
+  "protocol_id": "proto-egglog-dr-spike-and-ci",
+  "verdict": "pass",
+  "recorded_at": "2026-09-20T15:31:03Z",
+  "measurements": [
+    { "name": "egglog_best_dr", "value": 9 },
+    { "name": "fallback_best_dr", "value": 9 },
+    { "name": "verdict_yes", "value": true },
+    { "name": "optional_ci_job", "value": true }
+  ],
+  "evidence_refs": [
+    "https://github.com/ao3575911/gdk9/blob/main/docs/SPIKE-egglog.md",
+    "https://github.com/ao3575911/gdk9/pull/20",
+    "https://github.com/ao3575911/gdk9/tree/main/gdk9/egglog_bridge"
+  ],
+  "commit_sha": "b27cfc6d7ceaf68dbbf0b2f01076fd192396406f",
+  "notes": "Spike SHA c0485dbf794f65071d7f23db703a6b4d99106494; continuous check via optional egglog CI @ b27cfc6d7ceaf68dbbf0b2f01076fd192396406f."
+}

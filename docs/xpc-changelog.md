@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0] — 2026-09-21
+
+### Added
+- Thin CLI: `xpc validate` (auto-detect artifact kind)
+- Live run: `examples/gdk9-egglog-dr-bridge/` (SPIKE-egglog YES + gdk9#20)
+- Packaged schemas under `src/xpc/schemas/`
+
 ## [0.1.2] — 2026-09-21
 
 ### Added

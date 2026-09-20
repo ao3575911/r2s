@@ -1,0 +1,36 @@
+{
+  "id": "proto-egglog-dr-spike-and-ci",
+  "hypothesis_id": "gdk9-egglog-dr-matches-fallback",
+  "steps": [
+    {
+      "n": 1,
+      "action": "Encode one DR suite in egglog (sum fold then subsuming DR collapse); keep fallback rewriter",
+      "expect": "Fixture [26,10,9] → Energy.root(9); fallback best_dr=9"
+    },
+    {
+      "n": 2,
+      "action": "Compare egglog best_dr to fallback best_dr",
+      "expect": "Equal (both 9); VERDICT YES in SPIKE-egglog.md"
+    },
+    {
+      "n": 3,
+      "action": "Gate with pytest: fallback always; egglog tests marked and importorskip",
+      "expect": "Default CI green without egglog; optional job runs -m egglog on 3.11/3.12"
+    }
+  ],
+  "controls": [
+    "Do not invent new DR identities",
+    "Do not enable egglog on default matrix (no false red)"
+  ],
+  "environment": {
+    "kind": "ci",
+    "detail": "Spike local + GitHub Actions egglog job (gdk9#20)"
+  },
+  "inputs": [
+    "docs/SPIKE-egglog.md",
+    "gdk9/egglog_bridge/dr_egglog.py",
+    "gdk9/egglog_bridge/fallback.py",
+    "tests/test_egglog_bridge.py"
+  ],
+  "notes": "Claim is research YES; CI job is the ongoing prove gate."
+}

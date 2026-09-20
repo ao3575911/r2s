@@ -2,16 +2,23 @@
 <p align="center">hypothesis → protocol → result</p>
 
 <p align="center">
-  JSON Schema contract for research experiments.<br/>
+  Experiment contract: JSON Schemas + thin CLI.<br/>
   Sibling to <a href="https://github.com/ao3575911/r2s">r2s</a> (rank → ship).
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/spec-v0.1.0-5eead4?style=flat-square" alt="spec" />
+  <img src="https://img.shields.io/badge/version-0.2.0-5eead4?style=flat-square" alt="0.2.0" />
   <img src="https://img.shields.io/badge/license-MIT-0f1115?style=flat-square" alt="MIT" />
 </p>
 
-## What
+## Install
+
+```bash
+pip install -e ".[dev]"   # from clone; PyPI later
+xpc validate examples/gdk9-conserve-vs-naive
+```
+
+## Loop
 
 | Artifact | Job |
 |----------|-----|
@@ -20,19 +27,15 @@
 | `result` | pass / fail / inconclusive |
 | `run` | Bind one cycle |
 
-## Dogfood
+## Dogfood (live GDk9 runs)
 
-Real GDk9 experiment (conserved search vs naive join/split, moves 1–5):
+1. [`examples/gdk9-conserve-vs-naive/`](examples/gdk9-conserve-vs-naive/) — conserve vs naive (moves 1–5)
+2. [`examples/gdk9-keysuite-compose/`](examples/gdk9-keysuite-compose/) — KeySuite Phase B
+3. [`examples/gdk9-egglog-dr-bridge/`](examples/gdk9-egglog-dr-bridge/) — egglog DR spike YES + CI
 
-[`examples/gdk9-conserve-vs-naive/`](examples/gdk9-conserve-vs-naive/)
+## Spec
 
-Also: [`examples/gdk9-keysuite-compose/`](examples/gdk9-keysuite-compose/) (Phase B compose adapter).
-
-## Quick start
-
-1. [`docs/SPEC.md`](docs/SPEC.md)
-2. Copy an [`examples/`](examples/) cycle
-3. Validate against [`schemas/`](schemas/) (JSON Schema 2020-12)
+[`docs/SPEC.md`](docs/SPEC.md) · [`schemas/`](schemas/)
 
 ## License
 

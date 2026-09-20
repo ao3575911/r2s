@@ -1,0 +1,17 @@
+{
+  "id": "gdk9-egglog-dr-matches-fallback",
+  "claim": "GDk9 digital-root rewrite rules can be encoded in egglog (two-phase sum then DR fold) such that best_dr matches the legacy digital_root fallback on the spike fixture [26,10,9].",
+  "falsifier": "With egglog installed: saturate_egglog best_dr ≠ 9, or ≠ fallback best_dr; or without egglog the fallback path itself fails DR=9.",
+  "success_metric": "docs/SPIKE-egglog.md VERDICT YES; pytest fallback always; pytest -m egglog matches fallback when extra installed.",
+  "assumptions": [
+    "Two-phase saturation required (open-ended + with DR-equivalence explodes)",
+    "Python ≥3.11 for egglog path; fallback on older Pythons",
+    "No new DR maths — encode existing rules only"
+  ],
+  "status": "supported",
+  "links": {
+    "r2s_card_id": "gdk9-egglog-ci-optional",
+    "repo": "ao3575911/gdk9"
+  },
+  "notes": "Research spike landed 2026-09-08; CI optional job gdk9#20 keeps the claim continuously checked."
+}

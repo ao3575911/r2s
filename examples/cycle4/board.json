@@ -1,0 +1,135 @@
+{
+  "version": "0.1.0",
+  "max_active_builds": 2,
+  "cards": [
+    {
+      "id": "xpc-pypi-v020",
+      "claim": "pip install xpc==0.2.0 succeeds from pypi.org after Trusted Publishers are linked and publish.yml dry-runs TestPyPI then PyPI.",
+      "evidence": [
+        {
+          "kind": "repo",
+          "ref": "https://github.com/ao3575911/xpc/blob/main/.github/workflows/publish.yml",
+          "note": "OIDC publish.yml + docs/PUBLISHING.md on main (PR #1)"
+        },
+        {
+          "kind": "other",
+          "ref": "https://pypi.org/pypi/xpc/json",
+          "note": "HTTP 404 \u2014 package name free but not published yet"
+        },
+        {
+          "kind": "doc",
+          "ref": "https://github.com/ao3575911/xpc/blob/main/docs/PUBLISHING.md",
+          "note": "Publisher fields documented; envs testpypi/pypi created"
+        }
+      ],
+      "earn_path": {
+        "who_pays": "Public install surface for experiment contract",
+        "wedge": "pip install xpc",
+        "cheapest_test": "Adam saves pending publishers; gh workflow run publish.yml -f target=testpypi; then v0.2.0 release"
+      },
+      "target_repo": "ao3575911/xpc",
+      "novelty": 0.15,
+      "evidence_strength": 0.9,
+      "usability": 0.95,
+      "dependency_fit": 0.95,
+      "hours": 0.75,
+      "compute_cost": 0,
+      "blast_radius": 2,
+      "status": "design",
+      "notes": "Blocked only on Adam UI publishers \u2014 code path ready. Highest fleet leverage this week. | cycle4 rank#4 score=0.0443"
+    },
+    {
+      "id": "r2s-xpc-run-link",
+      "claim": "r2s outcome schema gains optional xpc_run_id (and example) so ship outcomes can point at an xpc run JSON without breaking v0.2.2 clients.",
+      "evidence": [
+        {
+          "kind": "repo",
+          "ref": "https://github.com/ao3575911/xpc/tree/main/examples",
+          "note": "Three live xpc runs already dogfooded from GDk9"
+        },
+        {
+          "kind": "repo",
+          "ref": "https://github.com/ao3575911/r2s/blob/main/schemas/outcome.schema.json",
+          "note": "Outcomes lack cross-link to experiment runs"
+        }
+      ],
+      "earn_path": {
+        "who_pays": "Fleet coherence (r2s \u2194 xpc)",
+        "wedge": "One optional field + one example outcome",
+        "cheapest_test": "Schema additive field + example + pytest validates"
+      },
+      "target_repo": "ao3575911/r2s",
+      "novelty": 0.35,
+      "evidence_strength": 0.8,
+      "usability": 0.85,
+      "dependency_fit": 0.9,
+      "hours": 1.5,
+      "compute_cost": 0,
+      "blast_radius": 1,
+      "status": "design",
+      "notes": "Thin bridge; does not require xpc on PyPI first. | cycle4 rank#1 score=0.0857"
+    },
+    {
+      "id": "gdk9-keysuite-fsm-slice",
+      "claim": "One minimal KeySuite COMMIT/IDLE slice test (or documented xfail) that states the next FSM gap beyond compose.basic.001 without inventing full JSONL runner.",
+      "evidence": [
+        {
+          "kind": "doc",
+          "ref": "https://github.com/ao3575911/gdk9/blob/main/docs/KEYSUITE_BRIDGE.md",
+          "note": "Phase B compose partial; FSM still gap"
+        },
+        {
+          "kind": "outcome",
+          "ref": "https://github.com/ao3575911/gdk9/pull/22",
+          "note": "Phase B spike shipped; next beat not coded"
+        }
+      ],
+      "earn_path": {
+        "who_pays": "GDk9 conformance research",
+        "wedge": "Honest next KeySuite step after Phase B",
+        "cheapest_test": "One test + KEYSUITE_BRIDGE note; pass or xfail with gap"
+      },
+      "target_repo": "ao3575911/gdk9",
+      "novelty": 0.55,
+      "evidence_strength": 0.7,
+      "usability": 0.7,
+      "dependency_fit": 0.75,
+      "hours": 3,
+      "compute_cost": 0,
+      "blast_radius": 1.5,
+      "status": "design",
+      "notes": "Research card \u2014 hand to GDk9 bot if it wins. | cycle4 rank#3 score=0.0449"
+    },
+    {
+      "id": "r2s-validate-board-cli",
+      "claim": "r2s CLI gains `validate` subcommand that validates card/board/handoff/outcome JSON against packaged schemas (mirroring xpc validate).",
+      "evidence": [
+        {
+          "kind": "repo",
+          "ref": "https://github.com/ao3575911/xpc/blob/main/src/xpc/cli.py",
+          "note": "xpc validate pattern already proven"
+        },
+        {
+          "kind": "repo",
+          "ref": "https://github.com/ao3575911/r2s/blob/main/src/r2s/cli.py",
+          "note": "r2s has rank/score/handoff only"
+        }
+      ],
+      "earn_path": {
+        "who_pays": "Dogfood ergonomics for boards",
+        "wedge": "r2s validate examples/cycle4",
+        "cheapest_test": "One subcommand + tests on cycle3/4 artefacts"
+      },
+      "target_repo": "ao3575911/r2s",
+      "novelty": 0.25,
+      "evidence_strength": 0.85,
+      "usability": 0.9,
+      "dependency_fit": 0.95,
+      "hours": 2,
+      "compute_cost": 0,
+      "blast_radius": 1,
+      "status": "design",
+      "notes": "Parity with xpc; reduces silent schema drift during cycles. | cycle4 rank#2 score=0.0606"
+    }
+  ]
+}

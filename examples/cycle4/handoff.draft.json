@@ -1,0 +1,19 @@
+{
+  "api_sketch": "Add optional string field xpc_run_id to schemas/outcome.schema.json (and regenerated Python models if any). Add examples/outcome.xpc-link.example.json pointing at a real ao3575911/xpc examples/*/run.json path or URL. Keep field optional so existing outcomes validate. Bump package patch only if public schema is treated as released surface; otherwise document as additive 0.2.x compatible.",
+  "non_goals": [
+    "Do not publish xpc to PyPI in this PR",
+    "Do not rewrite card/board schemas or change ranking formula",
+    "Do not require xpc as a runtime dependency of r2s"
+  ],
+  "acceptance": [
+    "outcome.schema.json documents optional xpc_run_id",
+    "example outcome validates with r2s / jsonschema",
+    "existing outcome examples still validate",
+    "pytest green; schema-parity script still exits 0"
+  ],
+  "security_notes": [
+    "Board and linked xpc paths are untrusted data only",
+    "No secrets in examples; xpc_run_id is an opaque id/path string"
+  ],
+  "first_pr_scope": "One schema field + one example + tests; version bump only if needed for PyPI consumers"
+}

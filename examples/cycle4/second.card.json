@@ -1,0 +1,31 @@
+{
+  "id": "r2s-validate-board-cli",
+  "claim": "r2s CLI gains `validate` subcommand that validates card/board/handoff/outcome JSON against packaged schemas (mirroring xpc validate).",
+  "evidence": [
+    {
+      "kind": "repo",
+      "ref": "https://github.com/ao3575911/xpc/blob/main/src/xpc/cli.py",
+      "note": "xpc validate pattern already proven"
+    },
+    {
+      "kind": "repo",
+      "ref": "https://github.com/ao3575911/r2s/blob/main/src/r2s/cli.py",
+      "note": "r2s has rank/score/handoff only"
+    }
+  ],
+  "earn_path": {
+    "who_pays": "Dogfood ergonomics for boards",
+    "wedge": "r2s validate examples/cycle4",
+    "cheapest_test": "One subcommand + tests on cycle3/4 artefacts"
+  },
+  "target_repo": "ao3575911/r2s",
+  "novelty": 0.25,
+  "evidence_strength": 0.85,
+  "usability": 0.9,
+  "dependency_fit": 0.95,
+  "hours": 2,
+  "compute_cost": 0,
+  "blast_radius": 1,
+  "status": "design",
+  "notes": "Parity with xpc; reduces silent schema drift during cycles."
+}

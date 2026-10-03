@@ -1,0 +1,31 @@
+{
+  "id": "r2s-xpc-run-link",
+  "claim": "r2s outcome schema gains optional xpc_run_id (and example) so ship outcomes can point at an xpc run JSON without breaking v0.2.2 clients.",
+  "evidence": [
+    {
+      "kind": "repo",
+      "ref": "https://github.com/ao3575911/xpc/tree/main/examples",
+      "note": "Three live xpc runs already dogfooded from GDk9"
+    },
+    {
+      "kind": "repo",
+      "ref": "https://github.com/ao3575911/r2s/blob/main/schemas/outcome.schema.json",
+      "note": "Outcomes lack cross-link to experiment runs"
+    }
+  ],
+  "earn_path": {
+    "who_pays": "Fleet coherence (r2s \u2194 xpc)",
+    "wedge": "One optional field + one example outcome",
+    "cheapest_test": "Schema additive field + example + pytest validates"
+  },
+  "target_repo": "ao3575911/r2s",
+  "novelty": 0.35,
+  "evidence_strength": 0.8,
+  "usability": 0.85,
+  "dependency_fit": 0.9,
+  "hours": 1.5,
+  "compute_cost": 0,
+  "blast_radius": 1,
+  "status": "design",
+  "notes": "Thin bridge; does not require xpc on PyPI first. | cycle4 rank#1 score=0.0857"
+}

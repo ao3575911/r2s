@@ -1,0 +1,9 @@
+{
+  "card_id": "r2s-cycle4-board",
+  "result": "ship",
+  "recorded_at": "2026-09-21T13:25:01Z",
+  "time_to_green_hours": 0.5,
+  "second_consumer": true,
+  "earn_hypothesis_held": true,
+  "notes": "Cycle 4 board ranked live cards only. Winner: r2s-xpc-run-link (0.0857). Active #2: r2s-validate-board-cli (0.0606). xpc-pypi-v020 live but publisher-blocked (0.0443). gdk9-keysuite-fsm-slice research queue (0.0449). CLI used as second_consumer for rank+handoff. PR/SHA filled after merge."
+}

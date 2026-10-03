@@ -1,0 +1,22 @@
+[
+  {
+    "id": "r2s-xpc-run-link",
+    "score": 0.08567999999999999,
+    "status": "design"
+  },
+  {
+    "id": "r2s-validate-board-cli",
+    "score": 0.0605625,
+    "status": "design"
+  },
+  {
+    "id": "gdk9-keysuite-fsm-slice",
+    "score": 0.04491666666666666,
+    "status": "design"
+  },
+  {
+    "id": "xpc-pypi-v020",
+    "score": 0.04430454545454546,
+    "status": "design"
+  }
+]

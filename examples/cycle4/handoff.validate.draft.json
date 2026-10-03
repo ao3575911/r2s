@@ -1,0 +1,19 @@
+{
+  "api_sketch": "Add `r2s validate PATH` that auto-detects card/board/handoff/outcome (or accepts --kind) and validates against packaged schemas, mirroring xpc validate. Exit 0 on valid, non-zero with readable errors.",
+  "non_goals": [
+    "Do not change ranking or scoring",
+    "Do not add network fetch of remote $id URLs in the default path",
+    "Do not bump major version"
+  ],
+  "acceptance": [
+    "r2s validate examples/cycle4/board.json exits 0",
+    "r2s validate on a broken JSON exits non-zero with field path",
+    "pytest covers happy path + one invalid case",
+    "schema-parity script still exits 0"
+  ],
+  "security_notes": [
+    "Validated files are untrusted input; do not execute content",
+    "No secrets in CLI output"
+  ],
+  "first_pr_scope": "One subcommand + tests against cycle3/cycle4 artefacts only"
+}

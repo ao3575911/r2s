@@ -4,13 +4,13 @@ import argparse
 import sys
 from pathlib import Path
 
-from xpc import ARTIFACTS, __version__
-from xpc.validate import validate_file
+from r2s.xpc import ARTIFACTS, __version__
+from r2s.xpc.validate import validate_file
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(prog="xpc", description="Experiment contract CLI")
-    parser.add_argument("--version", action="version", version=f"xpc {__version__}")
+    parser = argparse.ArgumentParser(prog="r2s xpc", description="Experiment contract (hypothesis, protocol, result, run)")
+    parser.add_argument("--version", action="version", version=f"r2s xpc {__version__}")
     sub = parser.add_subparsers(dest="cmd", required=True)
 
     v = sub.add_parser("validate", help="Validate hypothesis/protocol/result/run JSON")

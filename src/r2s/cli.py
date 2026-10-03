@@ -24,6 +24,16 @@ def main(argv: list[str] | None = None) -> int:
     p_hand.add_argument("card", help="Path to card JSON")
     p_hand.add_argument("--draft", help="Optional draft JSON with handoff fields")
 
+    sub.add_parser(
+        "xpc", help="Experiment contract: r2s xpc validate PATH ...", add_help=False
+    )
+
+    argv = sys.argv[1:] if argv is None else argv
+    if argv and argv[0] == "xpc":
+        from r2s.xpc.cli import main as xpc_main
+
+        return xpc_main(argv[1:])
+
     args = parser.parse_args(argv)
 
     if args.cmd == "rank":

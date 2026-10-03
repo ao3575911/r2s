@@ -3,7 +3,7 @@
 
 <p align="center">
   Experiment contract: JSON Schemas + thin CLI.<br/>
-  Sibling to <a href="https://github.com/ao3575911/r2s">r2s</a> (rank → ship).
+  Part of <a href="https://github.com/ao3575911/r2s">r2s</a> as <code>r2s xpc</code> (formerly the xpc repo).
 </p>
 
 <p align="center">
@@ -15,9 +15,9 @@
 ## Install
 
 ```bash
-git clone https://github.com/ao3575911/xpc && cd xpc
+git clone https://github.com/ao3575911/r2s && cd r2s
 pip install .
-xpc validate examples/gdk9-conserve-vs-naive
+r2s xpc validate examples/xpc/gdk9-conserve-vs-naive
 ```
 
 From a clone (dev):

@@ -7,7 +7,7 @@ from typing import Any
 from jsonschema import Draft202012Validator
 from referencing import Registry, Resource
 
-from xpc.paths import schemas_dir
+from r2s.xpc.paths import schemas_dir
 
 _REQUIRED: dict[str, frozenset[str]] = {
     "hypothesis": frozenset({"id", "claim", "falsifier", "success_metric", "status"}),

@@ -43,7 +43,7 @@ r2s = "r2s.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-r2s = ["schemas/*.schema.json"]
+r2s = ["schemas/*.schema.json", "xpc/schemas/*.schema.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

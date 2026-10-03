@@ -2,12 +2,12 @@ from pathlib import Path
 
 import pytest
 
-from xpc import __version__
-from xpc.cli import main
-from xpc.validate import detect_kind, validate_file
+from r2s.xpc import __version__
+from r2s.xpc.cli import main
+from r2s.xpc.validate import detect_kind, validate_file
 
 ROOT = Path(__file__).resolve().parents[1]
-EXAMPLES = ROOT / "examples"
+EXAMPLES = ROOT / "examples" / "xpc"
 
 
 def test_version():
@@ -39,3 +39,9 @@ def test_detect_hypothesis():
 
     data = json.loads((EXAMPLES / "gdk9-conserve-vs-naive" / "hypothesis.json").read_text())
     assert detect_kind(data) == "hypothesis"
+
+
+def test_r2s_cli_xpc_subcommand():
+    from r2s.cli import main as r2s_main
+
+    assert r2s_main(["xpc", "validate", str(EXAMPLES / "gdk9-egglog-dr-bridge")]) == 0

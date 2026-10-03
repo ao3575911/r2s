@@ -1,0 +1,20 @@
+{
+  "id": "result-conserve-vs-naive-move5",
+  "hypothesis_id": "gdk9-conserve-beats-naive-validity",
+  "protocol_id": "proto-conserve-vs-naive-moves-1-5",
+  "verdict": "pass",
+  "recorded_at": "2026-09-20T15:18:17Z",
+  "measurements": [
+    { "name": "moves_covered", "value": 5 },
+    { "name": "ci_matrix_jobs_green", "value": true },
+    { "name": "kernel_rejects_energy_mismatch", "value": true },
+    { "name": "naive_accepts_energy_mismatch", "value": true }
+  ],
+  "evidence_refs": [
+    "https://github.com/ao3575911/gdk9/pull/19",
+    "https://github.com/ao3575911/gdk9/blob/main/docs/EXPERIMENT_CONSERVE_SEARCH.md",
+    "https://github.com/ao3575911/gdk9/blob/main/tests/experiment/test_conserve_vs_naive.py"
+  ],
+  "commit_sha": "bc58029380db04fe76a7c2cce7819734331a3fbe",
+  "notes": "Move 5 shipped via gdk9 PR #19: fuse→split→fuse apply chain + same-names wrong-energy beat. Hypothesis held for validity-under-conservation (not speed)."
+}

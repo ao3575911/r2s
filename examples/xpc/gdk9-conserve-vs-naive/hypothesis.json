@@ -1,0 +1,17 @@
+{
+  "id": "gdk9-conserve-beats-naive-validity",
+  "claim": "On conserved fuse/split tasks, GDk9 ImplicationEngine finds a valid proof within small depth and rejects energy-mismatched targets that naive name-join/split accepts.",
+  "falsifier": "Any of: a returned step with conserved=false or |delta|>1e-9; miss of conserved A,B→AB or AB→A,B within max_depth=2; kernel accepting a documented energy-mismatched target as a conserved proof; fuse→split→fuse chain breaking conservation.",
+  "success_metric": "tests/experiment/test_conserve_vs_naive.py green on main (moves 1–5 fail bars).",
+  "assumptions": [
+    "Only existing KernelPrinciple.default() maths — no new energy law",
+    "Beat is proof validity under conservation, not speed or SOTA",
+    "Naive baseline is name-only BFS join/split (intentionally weak)"
+  ],
+  "status": "supported",
+  "links": {
+    "r2s_card_id": "gdk9-conserve-move5",
+    "repo": "ao3575911/gdk9"
+  },
+  "notes": "Source: docs/EXPERIMENT_CONSERVE_SEARCH.md (Approach A through move 5)."
+}

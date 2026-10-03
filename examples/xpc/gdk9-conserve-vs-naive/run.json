@@ -1,0 +1,10 @@
+{
+  "id": "run-conserve-vs-naive-through-move5",
+  "hypothesis_id": "gdk9-conserve-beats-naive-validity",
+  "protocol_id": "proto-conserve-vs-naive-moves-1-5",
+  "result_id": "result-conserve-vs-naive-move5",
+  "status": "complete",
+  "started_at": "2026-09-20T13:00:00Z",
+  "ended_at": "2026-09-20T15:18:17Z",
+  "notes": "Research moves 1–5 closed on ao3575911/gdk9; ranked/handoff via r2s cycle3 card gdk9-conserve-move5."
+}

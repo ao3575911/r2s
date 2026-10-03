@@ -15,7 +15,8 @@
 ## Install
 
 ```bash
-pip install xpc
+git clone https://github.com/ao3575911/xpc && cd xpc
+pip install .
 xpc validate examples/gdk9-conserve-vs-naive
 ```
 
